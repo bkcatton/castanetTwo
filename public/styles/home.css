@@ -8,13 +8,16 @@ nav {
   padding-right: 8%;
   position: sticky;
   top: 0;
-  width: 100%;
+  width: 90%;
   z-index: 10;
   text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
     1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
+  margin-right: 10%;
 }
 body {
-  background-color: rgb(7, 221, 150);
+  background-color: rgb(180, 255, 192);
+  overflow-x: hidden;
+  color: seagreen;
 }
 form {
   margin-top: 25em;
