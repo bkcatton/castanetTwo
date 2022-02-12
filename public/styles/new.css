@@ -1,0 +1,30 @@
+.add-new-property {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40%;
+  justify-content: space-around;
+
+}
+
+.new-form-label {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.add-new-property input {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 80%;
+  height: 20%;
+  text-overflow: wrap;
+  display: flex;
+
+}
+
+#new-listing-button {
+  color:whitesmoke;
+  background-color: steelblue;
+  width: 80%;
+  height: 30%;
+}
