@@ -41,3 +41,15 @@ form {
   justify-content: space-between;
   background-color: blue;
 }
+.add-new-property {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+
+}
+
+.new-form-label {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}

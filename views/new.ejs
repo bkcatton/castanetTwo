@@ -9,8 +9,9 @@
     <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
-    <link rel="stylesheet" href="/styles/newlisting.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="/styles/newlisting.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/listings.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
@@ -26,48 +27,38 @@
       <h2><span class=""> Register </span></h2>
       <h2><span class=""> Login </span></h2>
     </nav>
-    <h1>List your property:</h1>
+    <h1 class='new-form-label'>List your property:</h1>
     <section class="add-new-property">
-      <form action="/post">
+      <form id="new-form" action="/new" method="POST">
         <div>
-          <input placeholder="Description" type="text" />
-          <input placeholder="Address" type="text" />
+          <input placeholder="Description" type="text" name='title'/>
+          <input placeholder="Address" type="text" name='address' />
         </div>
         <div>
-          <input placeholder="City" type="text" />
-          <input placeholder="Postal Code" type="text" />
+          <input placeholder="City" type="text" name='city'/>
+          <input placeholder="Postal Code" type="text" name='postcode'/>
         </div>
         <div>
-          <input placeholder="Square ft" type="text" />
+          <input placeholder="Square ft" type="text" name='sqft' />
 
-          <input placeholder="Type" type="text" />
+          <input placeholder="Type" type="text" name='type' />
         </div>
         <div>
-          <input placeholder="Bedrooms" type="text" />
-          <input placeholder="Bathrooms" type="text" />
+          <input placeholder="Bedrooms" type="text" name='bedrooms' />
+          <input placeholder="Bathrooms" type="text" name='bathrooms' />
         </div>
         <div>
-          <input placeholder="Parking Spaces" type="text" />
-          <input placeholder="Photo" type="text" />
+          <input placeholder="Parking Spaces" type="text" name='parking' />
+          <input placeholder="Photo" type="text" name='photo_url' />
         </div>
         <div>
-          <input placeholder="List Price" type="text" />
-          <button type="submit">Add Listing</button>
+          <input placeholder="List Price" type="text" name='price' />
+          <button type="submit" id='new-listing-button'>Add Listing</button>
         </div>
       </form>
     </section>
 
     <main>
-      <div class="top-row">
-        <div>image1</div>
-        <div>image2</div>
-        <div>image3</div>
-      </div>
-      <div class="bottom-row">
-        <div>image4</div>
-        <div>image5</div>
-        <div>image6</div>
-      </div>
     </main>
 
     <footer class="main-footer">
