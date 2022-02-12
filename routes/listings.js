@@ -3,8 +3,14 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
+<<<<<<< HEAD
     db.query(`SELECT * FROM listings;`)
       .then((data) => {
+=======
+    db.query(`SELECT * FROM listings
+              LIMIT 9;`)
+      .then(data => {
+>>>>>>> origin
         // console.log(data);
         const templateVars = data.rows;
         res.render("listings", { templateVars });

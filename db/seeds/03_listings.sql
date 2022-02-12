@@ -12,4 +12,7 @@ VALUES
 (3, 'thirdhouse', '444 johnson st', 'Victoria', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://media.istockphoto.com/photos/brown-two-story-all-american-home-picture-id1158713117?k=20&m=1158713117&s=612x612&w=0&h=s_aoDM4KNoixI9qBLmJOBPMccoWsC11zxuBGGgFRiKY=', 800000),
 (4, 'House 4', '999 peters st', 'Calgary', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 900000),
 (5, 'Fifth House', '789 castanet st', 'Kelowna', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 750000),
-(6, 'Sixth House', '451 little road', 'Vancouver', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://images.pexels.com/photos/955793/pexels-photo-955793.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 10);
+(6, 'Sixth House', '451 little road', 'Vancouver', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://images.pexels.com/photos/955793/pexels-photo-955793.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 10),
+(7, '7 House', '567 Mountain st', 'SaltSpring Island', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://images.pexels.com/photos/277667/pexels-photo-277667.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 900000),
+(8, ' House of 8 ', '789 bingbong st', 'Toronto', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://images.pexels.com/photos/2724748/pexels-photo-2724748.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 1200000),
+(9, 'Ninth House', '451 little road', 'Vancouver', '7y63j2', 3800, 1, true, 'house', 2, 5, 5, 'https://images.pexels.com/photos/221024/pexels-photo-221024.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 600000);
