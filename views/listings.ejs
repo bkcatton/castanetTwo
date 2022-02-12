@@ -20,15 +20,16 @@
 
   <body>
     <nav>
-      <span class=""> Cast-a-Net </span>
-      <span class=""> Buy </span>
-      <span class=""> Sell </span>
-      <span class=""> Register </span>
-      <span class=""> Login </span>
+      <h2><span class=""> Cast-a-Net </span></h2>
+      <h2><span class=""> Buy </span></h2>
+      <h2><span class=""> Sell </span></h2>
+      <h2><span class=""> Register </span></h2>
+      <h2><span class=""> Login </span></h2>
     </nav>
 
     <div>
       <form action="">
+        <h2>Search by city</h1>
         <input type="text" />
         <button>button</button>
       </form>
@@ -38,7 +39,7 @@
         <% for (let listing of templateVars) { %>
           <article class="listing-container">
             <h1><%= listing.title %> </h1>
-            <h2><%= listing.price %></h2>
+            <h2>$<%= listing.price %></h2>
             <h2><%= listing.street_name_number %></h2>
             <h2><%= listing.city %></h2>
             <img src="<%= listing.photo_url %>" class="listing-photo">

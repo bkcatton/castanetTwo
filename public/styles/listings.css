@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: antiquewhite;
+  border: black 3px solid;
+  width: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .listing-photo {

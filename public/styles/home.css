@@ -1,11 +1,11 @@
 nav {
-  color: rgb(101, 216, 252);
+  color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
-  background-color: aquamarine;
-  height: 20%;
+  background-color: rgb(255, 255, 255);
+  height: 3em;
   padding-left: 2%;
-  padding-right: 2%;
+  padding-right: 8%;
   position: sticky;
   top: 0;
   width: 100%;
@@ -25,6 +25,7 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .bottom-row {
   display: flex;
