@@ -52,3 +52,56 @@ Messages Attributes:
 Seller_id
 Buyer_id
 content
+
+Page details---------------------------------
+
+Logged in nav bar
+
+- Buy link to home page is home
+- Sell link to add property page
+- link to show favourites
+- log out button
+- User name
+- link to users listings
+
+Logged out nav bar
+
+- Login button
+- Buy link to home page
+- Sell that directs to login
+- Link to Register
+
+Footer
+
+- Back to top link
+- Logo
+
+Home page
+
+- navbar
+- search input
+- random properties
+- Footer
+
+Listings page
+
+- nav bar
+- Shows users listings
+- Keeps search feild
+- footer
+
+Add properties page
+
+- nav bar
+- Has form for adding properties
+- Footer
+
+Individul listings page
+
+- nav bar
+- listing image
+- details for that listing
+- contact form
+- footer
+
+hello
