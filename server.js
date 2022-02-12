@@ -39,7 +39,7 @@ app.use(express.static("public"));
 
 //DATABASE QUERIES
 const usersRoutes = require("./routes/usersQ");
-const newListingRoutes = require("./routes/newQ");
+const newListing = require("./routes/newQ");
 const Routes = require("./routes/usersQ");
 //favourites query ->rendered on index
 const favourites = require("./routes/favouritesQ");
@@ -54,7 +54,7 @@ const featuredListings = require("./routes/featuredListingsQ");
 const singleListing = require("./routes/singleListingQ");
 
 //new POST query -> post to database from new
-const postNew = require("./routes/postNewQ");
+// const postNew = require("./routes/postNewQ");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -65,7 +65,7 @@ app.use("/api/myListings", myListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/singleListing", singleListing(db));
-app.use("/api/postNew", postNew(db));
+app.use("/api/newListing", newListing(db));
 // app.use("/api/listings", listingsRoutes(db));
 
 //PAGE ROUTES
