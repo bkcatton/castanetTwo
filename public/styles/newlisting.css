@@ -1,0 +1,50 @@
+nav {
+  color: rgb(0, 4, 5);
+  display: flex;
+  justify-content: space-between;
+
+  height: 50px;
+  background-color: aquamarine;
+  padding-left: 2%;
+  padding-right: 2%;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
+    1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
+}
+nav span {
+  margin-top: 1.5em;
+}
+body {
+  background-color: rgb(133, 199, 177);
+  height: 100%;
+  min-height: 100%;
+}
+/* form {
+  margin-top: 25em;
+  display: flex;
+  justify-content: center;
+} */
+.add-new-property {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: blue;
+}

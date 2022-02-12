@@ -1,0 +1,39 @@
+nav {
+  color: rgb(101, 216, 252);
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+  height: 20%;
+  padding-left: 2%;
+  padding-right: 2%;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
+    1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
+}
+body {
+  background-color: rgb(7, 221, 150);
+}
+form {
+  margin-top: 25em;
+  display: flex;
+  justify-content: center;
+}
+.top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: blue;
+}
