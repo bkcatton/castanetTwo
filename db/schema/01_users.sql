@@ -21,7 +21,6 @@ CREATE TABLE favorites (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) DELETE ON CASCADE,
   listings_id INTEGER REFERENCES listings(id) DELETE ON CASCADE,
-  message_body TEXT
 );
 CREATE TABLE listings (
   id SERIAL PRIMARY KEY NOT NULL,
