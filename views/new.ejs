@@ -19,35 +19,48 @@
 
   <body>
     <nav>
-      <span class=""> Cast-a-Net </span>
-      <span class=""><a href="/home">Buy</a></span>
-      <span class=""><a href="/new">Sell</a></span>
-      <span class=""><button>Register</button></span>
-      <span class=""><button>Login</button></span>
+      <div class="header-content">
+        <span class=""> Cast-a-Net </span>
+        <span class=""><a href="/home">Buy</a></span>
+        <span class=""><a href="/new">Sell</a></span>
+      </div>
+
+      <div class="header-buttons">
+        <span class=""><button>Register</button></span>
+        <span class=""><button>Login</button></span>
+      </div>
     </nav>
     <h1>List your property:</h1>
     <section class="add-new-property">
-      <form action="">
-        <input placeholder="Title" type="text" />
-        <input placeholder="Address" type="text" />
-        <input placeholder="City" type="text" />
-        <input placeholder="Postal Code" type="text" />
-        <input placeholder="Square ft" type="text" />
-        <input placeholder="Type" type="text" />
-        <input placeholder="Bedrooms" type="text" />
-        <input placeholder="Bathrooms" type="text" />
-        <input placeholder="Parking Spaces" type="text" />
-        <input placeholder="Photo" type="text" />
-        <input placeholder="List Price" type="text" />
-        <input placeholder="Description" type="text" />
+      <form action="/post">
+        <div>
+          <input placeholder="Description" type="text" />
+          <input placeholder="Address" type="text" />
+        </div>
+        <div>
+          <input placeholder="City" type="text" />
+          <input placeholder="Postal Code" type="text" />
+        </div>
+        <div>
+          <input placeholder="Square ft" type="text" />
+
+          <input placeholder="Type" type="text" />
+        </div>
+        <div>
+          <input placeholder="Bedrooms" type="text" />
+          <input placeholder="Bathrooms" type="text" />
+        </div>
+        <div>
+          <input placeholder="Parking Spaces" type="text" />
+          <input placeholder="Photo" type="text" />
+        </div>
+        <div>
+          <input placeholder="List Price" type="text" />
+          <button type="submit">Add Listing</button>
+        </div>
       </form>
     </section>
-    <div>
-      <form action="">
-        <input placeholder="search by city" type="text" />
-        <button>button</button>
-      </form>
-    </div>
+
     <main>
       <div class="top-row">
         <div>image1</div>
