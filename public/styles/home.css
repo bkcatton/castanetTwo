@@ -2,18 +2,20 @@ nav {
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(146, 250, 193);
   height: 3em;
   padding-left: 2%;
   padding-right: 8%;
   position: sticky;
   top: 0;
   width: 90%;
+  height: 5%;
   z-index: 10;
   text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
     1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
   margin-right: 10%;
 }
+
 body {
   background-color: rgb(180, 255, 192);
   overflow-x: hidden;
@@ -39,17 +41,6 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: blue;
-}
-.add-new-property {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10%;
-
+  background-color:rgb(146, 250, 193);
 }
 
-.new-form-label {
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
-}
