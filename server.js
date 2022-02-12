@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8080;
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -21,6 +22,7 @@ app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(
 //   "/styles",
@@ -38,12 +40,12 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
+const listingsRoutes = require('./routes/listings')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
+app.use("/listings", listingsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -53,15 +55,15 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.get("/", (req, res) => {
   res.render("index");
 });
-app.get("/home", (req, res) => {
-  res.render("home");
-});
-app.get("/new", (req, res) => {
-  res.render("new");
-});
-app.get("/listings", (req, res) => {
-  res.render("listings");
-});
+// app.get("/home", (req, res) => {
+//   res.render("home");
+// });
+// app.get("/new", (req, res) => {
+//   res.render("new");
+// });
+// app.get("/listings", (req, res) => {
+//   res.render("listings");
+// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

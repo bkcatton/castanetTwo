@@ -34,14 +34,20 @@
     </div>
     <main>
       <div class="top-row">
-        <div>image1</div>
-        <div>image2</div>
-        <div>image3</div>
+        <% for (let listing of templateVars) { %>
+          <article class="listing-container">
+            <h1><%= listing.title %> </h1>
+            <h2><%= listing.price %></h2>
+            <h2><%= listing.street_name_number %></h2>
+            <h2><%= listing.city %></h2>
+            <img src="<%= listing.photo_url %>" class="listing-photo">
+          </article>
+        <% } %>
       </div>
       <div class="bottom-row">
-        <div>image4</div>
+        <!-- <div>image4</div>
         <div>image5</div>
-        <div>image6</div>
+        <div>image6</div> -->
       </div>
     </main>
 
