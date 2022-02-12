@@ -8,5 +8,9 @@ VALUES
 (5, 'Peter', 2502233226, false),
 (6, 'Paul', 2501243226, false),
 (7, 'Sam', 2501234226, false),
-(8, 'Kerry', 2501233226, false);
+(8, 'Kerry', 2501233226, false),
+(9, 'Terry', 7802233226, false),
+(10, 'Christian', 4031243226, false),
+(11, 'Felipe', 6661234226, false),
+(12, 'Grant', 7801233226, false);
 

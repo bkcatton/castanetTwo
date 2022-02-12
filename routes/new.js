@@ -11,7 +11,7 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     // console.log(query);
-    db.query(`SELECT * FROM listings`)
+    db.query(`SELECT * FROM listings;`)
       .then(data => {
         const templateVars = data.rows;
         res.render("new", { templateVars });

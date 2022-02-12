@@ -3,7 +3,8 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM listings;`)
+    db.query(`SELECT * FROM listings
+              LIMIT 9;`)
       .then(data => {
         // console.log(data);
         const templateVars = data.rows;
