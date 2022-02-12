@@ -9,7 +9,7 @@
     <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
-    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/newlisting.css" type="text/css" />
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
@@ -20,15 +20,31 @@
   <body>
     <nav>
       <span class=""> Cast-a-Net </span>
-      <span class=""> Buy </span>
-      <span class=""> Sell </span>
-      <span class=""> Register </span>
-      <span class=""> Login </span>
+      <span class=""><a href="/home">Buy</a></span>
+      <span class=""><a href="/new">Sell</a></span>
+      <span class=""><button>Register</button></span>
+      <span class=""><button>Login</button></span>
     </nav>
-
+    <h1>List your property:</h1>
+    <section class="add-new-property">
+      <form action="">
+        <input placeholder="Title" type="text" />
+        <input placeholder="Address" type="text" />
+        <input placeholder="City" type="text" />
+        <input placeholder="Postal Code" type="text" />
+        <input placeholder="Square ft" type="text" />
+        <input placeholder="Type" type="text" />
+        <input placeholder="Bedrooms" type="text" />
+        <input placeholder="Bathrooms" type="text" />
+        <input placeholder="Parking Spaces" type="text" />
+        <input placeholder="Photo" type="text" />
+        <input placeholder="List Price" type="text" />
+        <input placeholder="Description" type="text" />
+      </form>
+    </section>
     <div>
       <form action="">
-        <input type="text" />
+        <input placeholder="search by city" type="text" />
         <button>button</button>
       </form>
     </div>
