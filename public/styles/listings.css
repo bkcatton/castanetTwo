@@ -1,0 +1,9 @@
+.listing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listing-photo {
+  width: 60%
+}
