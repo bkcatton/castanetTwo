@@ -3,7 +3,7 @@ require("dotenv").config();
 
 // Web server config
 const PORT = process.env.PORT || 8080;
-const sassMiddleware = require("./lib/sass-middleware");
+// const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
@@ -22,14 +22,16 @@ app.use(morgan("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  "/styles",
-  sassMiddleware({
-    source: __dirname + "/styles",
-    destination: __dirname + "/public/styles",
-    isSass: false, // false => scss, true => sass
-  })
-);
+// app.use(
+//   "/styles",
+//   sassMiddleware({
+//     source: __dirname + "/styles",
+//     destination: __dirname + "/public/styles",
+//     isSass: false, // false => scss, true => sass
+//   })
+// );
+
+app.use(express.static(__dirname + "/public"));
 
 app.use(express.static("public"));
 
@@ -50,6 +52,15 @@ app.use("/api/widgets", widgetsRoutes(db));
 
 app.get("/", (req, res) => {
   res.render("index");
+});
+app.get("/home", (req, res) => {
+  res.render("home");
+});
+app.get("/new", (req, res) => {
+  res.render("new");
+});
+app.get("/listings", (req, res) => {
+  res.render("listings");
 });
 
 app.listen(PORT, () => {
