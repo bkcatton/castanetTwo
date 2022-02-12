@@ -9,7 +9,7 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
+  router.get("/asdfadsf", (req, res) => {
     // console.log(query);
     db.query(`SELECT * FROM listings;`)
       .then(data => {
@@ -22,7 +22,7 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  router.post('/', (req, res) => {
+  router.post('/sdfadsf', (req, res) => {
     db.query(`INSERT INTO listings (id, title, street_name_number, city, postal_code, sq_ft, seller_id, isActive,
       property_type,
       bedroom_number,

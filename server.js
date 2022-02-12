@@ -34,39 +34,51 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // );
 
 app.use(express.static(__dirname + "/public"));
-
 app.use(express.static("public"));
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
-const usersRoutes = require("./routes/users");
-const listingsRoutes = require('./routes/listings');
-const newRoutes = require('./routes/new');
+
+//DATABASE QUERIES
+const usersRoutes = require("./routes/usersQ");
+const newListingRoutes = require("./routes/newQ");
+const Routes = require("./routes/usersQ");
+//favourites query ->rendered on index
+const favourites = require("./routes/favouritesQ");
+//mylistings query -> rendered on index
+const myListings = require("./routes/myListingsQ");
+//search query -> rendered on index
+const listingSearch = require("./routes/listingSearchQ");
+//featured query -> rendered on index -> main view
+const featuredListings = require("./routes/featuredListingsQ");
+
+//single listing query -> render on single_listing
+const singleListing = require("./routes/singleListingQ");
+
+//new POST query -> post to database from new
+const postNew = require("./routes/postNewQ");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
-app.use("/listings", listingsRoutes(db));
-app.use("/", listingsRoutes(db));
-app.use("/new", newRoutes(db));
-// Note: mount other resources here, using the same pattern above
+//API ROUTES
+app.use("/api/users", usersRoutes(db)); //make new
+app.use("/api/favourites", favourites(db));
+app.use("/api/myListings", myListings(db));
+app.use("/api/listingSearch", listingSearch(db));
+app.use("/api/featuredListings", featuredListings(db));
+app.use("/api/singleListing", singleListing(db));
+app.use("/api/postNew", postNew(db));
+// app.use("/api/listings", listingsRoutes(db));
 
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
+//PAGE ROUTES
+app.get("/", (req, res) => {
+  res.render('index')
+});
+app.get("/single_listing", (req, res) => {
+  res.render('single_listing')
+});
+app.get("/new", (req, res) => {
+  res.render('new')
+});
 
-// app.get("/", (req, res) => {
-//   res.render("listings");
-// });
-// app.get("/home", (req, res) => {
-//   res.render("home");
-// });
-// app.get("/new", (req, res) => {
-//   res.render("new");
-// });
-// app.get("/listings", (req, res) => {
-//   res.render("listings");
-// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

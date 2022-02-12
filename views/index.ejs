@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- css -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
-    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
-    <!-- <link rel="stylesheet" href="../public/styles/home.css" type="text/css" /> -->
-    <title>Header</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- css -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
+  <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
+  <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
+  <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+    integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/featuredListings.js"></script>
 
-  <body>
-    <nav>
-      <h2><span class=""> Cast-a-Net </span></h2>
-      <h2><span class=""> Buy </span></h2>
-      <h2><span class=""> Sell </span></h2>
-      <h2><span class=""> Register </span></h2>
-      <h2><span class=""> Login </span></h2>
-    </nav>
+  <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
+  <!-- <link rel="stylesheet" href="../public/styles/home.css" type="text/css" /> -->
+  <title>Header</title>
+</head>
 
-    <div>
-      <form action="">
-        <input type="text" />
-        <button>button</button>
-      </form>
+<body>
+  <nav>
+    <h2><span class=""> Cast-a-Net </span></h2>
+    <h2><span class=""> Buy </span></h2>
+    <h2><span class=""> Sell </span></h2>
+    <h2><span class=""> Register </span></h2>
+    <h2><span class=""> Login </span></h2>
+  </nav>
+
+  <div>
+    <form action="">
+      <input type="text" />
+      <button>button</button>
+    </form>
+  </div>
+  <main>
+    <div class="top-row">
     </div>
-    <main>
-      <div class="top-row">
-        <% for (let listing of templateVars) { %>
-          <article class="listing-container">
-            <h1><%= listing.title %> </h1>
-            <h2>$<%= listing.price %></h2>
-            <h2><%= listing.street_name_number %></h2>
-            <h2><%= listing.city %></h2>
-            <img src="<%= listing.photo_url %>" class="listing-photo">
-          </article>
-        <% } %>
-      </div>
-    </main>
+  </main>
 
-    <footer class="main-footer">
-      <span> Cast-a-Net <sup>©</sup></span>
-      <span class="footer-link"><a href="#top">Back to top</a></span>
-    </footer>
-  </body>
+  <footer class="main-footer">
+    <span> Cast-a-Net <sup>©</sup></span>
+    <span class="footer-link"><a href="#top">Back to top</a></span>
+  </footer>
+</body>
+
 </html>
