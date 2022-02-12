@@ -1,5 +1,4 @@
 -- Drop and recreate Users table (Example)
-
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS messages CASCADE;
 DROP TABLE IF EXISTS listings CASCADE;
@@ -10,13 +9,6 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   phone_number VARCHAR(30),
   is_admin BOOLEAN
-);
-
-CREATE TABLE messages (
-  id SERIAL PRIMARY KEY NOT NULL,
-  sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  message_body TEXT
 );
 
 
