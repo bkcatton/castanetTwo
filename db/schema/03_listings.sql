@@ -1,4 +1,8 @@
 DROP TABLE IF EXISTS listings CASCADE;
+DROP SEQUENCE IF EXISTS id_sequence CASCADE;
+CREATE SEQUENCE id_sequence
+  start 20
+  increment 2;
 
 CREATE TABLE listings (
   id SERIAL PRIMARY KEY NOT NULL,
