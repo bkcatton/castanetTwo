@@ -8,7 +8,7 @@ const $addData = function (data) {
 }
 $topRow.append('<p>Hello</p>');
   $.ajax({
-    url: 'http://localhost:8080/api/featuredListings',
+    url: 'http://localhost:8080/api/newListing',
     method: 'GET',
     dataType: 'json',
     success: (data) => {
