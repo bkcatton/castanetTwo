@@ -1,22 +1,25 @@
+
 // Client facing scripts here
 $(document).ready(function () {
-  // const $change = $('#target');
+  const $topRow = $(".top-row");
+  const $link = $(".single-listing");
 
-  $topRow.append("<p>Hello</p>");
-  $.ajax({
-    url: "http://localhost:8080/api/singleListing",
-    method: "GET",
-    dataType: "json",
-    success: (data) => {
-      const dataUser = data["users"][0];
-      $topRow.append(`<p>${dataUser.name}</p>`);
-      console.log(
-        "this request succeeded and here's the data",
-        data["users"][0]
-      );
-    },
-    error: (error) => {
-      console.log("this request failed and this was the error", error);
-    },
-  });
+  console.log("from inside single listing", imagelink);
+
+      $.ajax({
+        url: `http://localhost:8080/api/singleListing`,
+        method: "GET",
+        dataType: "json",
+        //data: { cityName: $inputCity, price: $inputPrice },
+        success: (data) => {
+          console.log("from inside success", $link.attr('id'));
+          console.log("DATA", data);
+          const $inputValue = $(".input-search").val();
+        },
+        error: (error) => {
+          console.log("this request failed and this was the error", error);
+        },
+      });
+
 });
+

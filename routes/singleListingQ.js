@@ -3,9 +3,11 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
+    console.log("body", req.body);
+    console.log("response", res);
     db.query(
       `SELECT * FROM listings
-    WHERE id = 1;`
+    WHERE id = 2;`,
     )
       .then((data) => {
         const listing = data.rows;

@@ -1,17 +1,18 @@
 
-
+//
 // Client facing scripts here
 $(document).ready(function () {
   // // const $change = $('#target');
   const $topRow = $('.top-row');
   const $addListing = function (listing) {
     console.log(listing);
-    const $listingContainer = `<article>
-  <img src='${listing.photo_url}' />
+    const $listingContainer = `<article class="single-listing">
+    <a name="imagelink" id='${listing.id}' class="single-listing" href="/single_listing"> <img src='${listing.photo_url}' /></a>
   <h3>${listing.title}</h3>
   <h3>${listing.city}</h3>
   <h3>${listing.price}</h3>
   </article>`;
+
     return $listingContainer;
   }
   const renderListing = function (listings) {
