@@ -6,8 +6,9 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(
       `SELECT * FROM listings
-        JOIN users ON listings.seller_id = users.id
-        WHERE seller_id = $1;`, [req.session.user_id]
+      JOIN favorites ON listings.id = listing_id
+        WHERE user_id = $1;`,
+      [req.session.user_id]
     ) //change query to show favorites
       .then((data) => {
         const favorites = data.rows;

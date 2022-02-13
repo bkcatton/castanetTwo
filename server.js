@@ -24,10 +24,12 @@ app.use(morgan("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieSession({
-  name: "session",
-  keys: ["user_id"]
-}))
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["user_id"],
+  })
+);
 
 // app.use(
 //   "/styles",
@@ -44,12 +46,14 @@ app.use(express.static("public"));
 //DATABASE QUERIES
 const usersRoutes = require("./routes/login");
 // const newListing = require("./routes/new");
-const newRoutes = require('./routes/new');
+const newRoutes = require("./routes/new");
 // const Routes = require("./routes/usersQ");
 //favourites query ->rendered on index
 const favorites = require("./routes/favoritesQ");
 //mylistings query -> rendered on index
 const myListings = require("./routes/myListingsQ");
+//Delete item
+const deleteListing = require("./routes/deleteListingQ");
 // const myListing = require("./routes/myListingsQ");
 //search query -> rendered on index
 const listingSearch = require("./routes/listingSearchQ");
@@ -74,9 +78,10 @@ app.use("/api/myListings", myListings(db));
 app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
+// app.use("/api/myListings", deleteListing(db));
 // app.use("/api/newListing", newListing(db));
-app.use("/new", newRoutes(db))
-app.use('/', loginRoutes(db));
+app.use("/new", newRoutes(db));
+app.use("/", loginRoutes(db));
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
@@ -92,12 +97,12 @@ app.get("/new", (req, res) => {
 });
 
 app.get("/favorites", (req, res) => {
-  res.render('favorites');
-})
+  res.render("favorites");
+});
 
 app.get("/myListings", (req, res) => {
-  res.render('myListings');
-})
+  res.render("myListings");
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
