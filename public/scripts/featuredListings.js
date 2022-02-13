@@ -1,10 +1,13 @@
-
 //
 // Client facing scripts here
 $(document).ready(function () {
   // // const $change = $('#target');
-  const $topRow = $('.top-row');
+  const $topRow = $(".top-row");
   const $addListing = function (listing) {
+    $(".top-row").on("click", (e) => {
+      console.log("hellooooooooooooo");
+      console.log(e.target.id);
+    });
     // console.log(listing);
     const $listingContainer = `<article class="single-listing">
     <a name="imagelink" id='${listing.id}' class="single-listing" href="/single_listing"> <img src='${listing.photo_url}' /></a>
@@ -14,27 +17,27 @@ $(document).ready(function () {
   </article>`;
 
     return $listingContainer;
-  }
+  };
   const renderListing = function (listings) {
     const array = listings.listings;
     for (let listing of array) {
       const $item = $addListing(listing);
-      $('.top-row').append($item);
+      $(".top-row").append($item);
     }
-  }
+  };
   const loadListings = function () {
     $.ajax({
-      url: 'http://localhost:8080/api/featuredListings',
-      method: 'GET',
-      dataType: 'json',
+      url: "http://localhost:8080/api/featuredListings",
+      method: "GET",
+      dataType: "json",
       success: (data) => {
-        renderListing(data)
+        renderListing(data);
         // console.log(listings);
       },
       error: (error) => {
-        console.log('this request failed and this was the error', error);
-      }
-    })
-  }
+        console.log("this request failed and this was the error", error);
+      },
+    });
+  };
   loadListings();
-})
+});
