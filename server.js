@@ -95,6 +95,10 @@ app.get("/favorites", (req, res) => {
   res.render('favorites');
 })
 
+app.get("/myListings", (req, res) => {
+  res.render('myListings');
+})
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
