@@ -1,11 +1,9 @@
-
-//
 // Client facing scripts here
 $(document).ready(function () {
   // // const $change = $('#target');
   const $topRow = $('.top-row');
   const $addListing = function (listing) {
-    // console.log(listing);
+    console.log(listing);
     const $listingContainer = `<article class="single-listing">
     <a name="imagelink" id='${listing.id}' class="single-listing" href="/single_listing"> <img src='${listing.photo_url}' /></a>
   <h3>${listing.title}</h3>
@@ -16,7 +14,7 @@ $(document).ready(function () {
     return $listingContainer;
   }
   const renderListing = function (listings) {
-    const array = listings.listings;
+    const array = listings.favorites;
     for (let listing of array) {
       const $item = $addListing(listing);
       $('.top-row').append($item);
@@ -24,11 +22,13 @@ $(document).ready(function () {
   }
   const loadListings = function () {
     $.ajax({
-      url: 'http://localhost:8080/api/featuredListings',
+      url: 'http://localhost:8080/api/favorites',
       method: 'GET',
       dataType: 'json',
+      // data: {  }
       success: (data) => {
-        renderListing(data)
+        console.log('data', data);
+        renderListing(data);
         // console.log(listings);
       },
       error: (error) => {

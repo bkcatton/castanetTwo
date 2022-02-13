@@ -8,6 +8,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -23,6 +24,10 @@ app.use(morgan("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieSession({
+  name: "session",
+  keys: ["user_id"]
+}))
 
 // app.use(
 //   "/styles",
@@ -37,12 +42,12 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.static("public"));
 
 //DATABASE QUERIES
-const usersRoutes = require("./routes/usersQ");
+const usersRoutes = require("./routes/login");
 // const newListing = require("./routes/new");
 const newRoutes = require('./routes/new');
-const Routes = require("./routes/usersQ");
+// const Routes = require("./routes/usersQ");
 //favourites query ->rendered on index
-const favourites = require("./routes/favouritesQ");
+const favorites = require("./routes/favoritesQ");
 //mylistings query -> rendered on index
 const myListings = require("./routes/myListingsQ");
 // const myListing = require("./routes/myListingsQ");
@@ -54,6 +59,9 @@ const featuredListings = require("./routes/featuredListingsQ");
 //single listing query -> render on single_listing
 const singleListing = require("./routes/singleListingQ");
 
+// login routes
+const loginRoutes = require("./routes/login");
+
 //new POST query -> post to database from new
 // const postNew = require("./routes/postNewQ");
 
@@ -61,13 +69,14 @@ const singleListing = require("./routes/singleListingQ");
 // Note: Feel free to replace the example routes below with your own
 //API ROUTES
 app.use("/api/users", usersRoutes(db)); //make new
-app.use("/api/favourites", favourites(db));
+app.use("/api/favorites", favorites(db));
 app.use("/api/myListings", myListings(db));
 app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
 // app.use("/api/newListing", newListing(db));
 app.use("/new", newRoutes(db))
+app.use('/', loginRoutes(db));
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
@@ -81,6 +90,10 @@ app.get("/single_listing", (req, res) => {
 app.get("/new", (req, res) => {
   res.render("new");
 });
+
+app.get("/favorites", (req, res) => {
+  res.render('favorites');
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
