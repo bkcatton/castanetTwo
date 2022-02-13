@@ -13,8 +13,8 @@ $(document).ready(function () {
 
     return $listingContainer;
   }
-  const renderListing = function (listings) {
-    const array = listings.favorites;
+  const renderListing = function (myListings) {
+    const array = myListings.listings;
     for (let listing of array) {
       const $item = $addListing(listing);
       $('.top-row').append($item);

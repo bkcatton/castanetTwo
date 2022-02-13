@@ -5,10 +5,11 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT *
               FROM listings
+              JOIN users ON listings.seller_id = users.id
               WHERE seller_id = $1;`, [req.session.user_id])
       .then(data => {
-        const users = data.rows;
-        res.json({ users });
+        const myListings = data.rows;
+        res.json({ myListings });
       })
       .catch(err => {
         res
