@@ -38,7 +38,8 @@ app.use(express.static("public"));
 
 //DATABASE QUERIES
 const usersRoutes = require("./routes/usersQ");
-const newListing = require("./routes/newQ");
+// const newListing = require("./routes/new");
+const newRoutes = require('./routes/new');
 const Routes = require("./routes/usersQ");
 //favourites query ->rendered on index
 const favourites = require("./routes/favouritesQ");
@@ -65,7 +66,8 @@ app.use("/api/myListings", myListings(db));
 app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
-app.use("/api/newListing", newListing(db));
+// app.use("/api/newListing", newListing(db));
+app.use("/new", newRoutes(db))
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
