@@ -45,7 +45,6 @@ $(document).ready(function () {
         dataType: "json",
         data: { cityName: $inputCity, price: $inputPrice },
         success: (data) => {
-          console.log("DATA", data);
           const $inputValue = $(".input-search").val();
 
           renderListing(data);

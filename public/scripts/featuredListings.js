@@ -5,12 +5,13 @@ $(document).ready(function () {
   const $topRow = $(".top-row");
   const $addListing = function (listing) {
     $(".top-row").on("click", (e) => {
-      console.log("hellooooooooooooo");
-      console.log(e.target.id);
+      console.log("this is in the onclick", e.target.id);
+      localStorage.setItem('singleListingId', e.target.id);
+
     });
     // console.log(listing);
-    const $listingContainer = `<article class="single-listing">
-    <a name="imagelink" id='${listing.id}' class="single-listing" href="/single_listing"> <img src='${listing.photo_url}' /></a>
+    const $listingContainer = `<article>
+    <a name="imagelink" class="single-listing" href="/single_listing"><img src='${listing.photo_url}' id='${listing.id}'/></a>
   <h3>${listing.title}</h3>
   <h3>${listing.city}</h3>
   <h3>$${listing.price}</h3>
@@ -19,6 +20,7 @@ $(document).ready(function () {
     return $listingContainer;
   };
   const renderListing = function (listings) {
+    console.log(listings);
     const array = listings.listings;
     for (let listing of array) {
       const $item = $addListing(listing);
