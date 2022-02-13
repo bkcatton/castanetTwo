@@ -33,8 +33,10 @@ $(document).ready(function () {
       console.log("hello");
     });
     const $inputCity = $(".input-city").val();
-    const $inputPrice = $(".input-price").val();
-    console.log("price", $inputPrice);
+    let $inputPrice = $(".input-price").val();
+    if ($inputPrice === "") {
+      $inputPrice = 10000000;
+    }
 
     const loadListings = function () {
       $.ajax({
