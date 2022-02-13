@@ -1,24 +1,58 @@
 // Client facing scripts here
-$(document).ready(function () {
-// const $change = $('#target');
 
-const $topRow = $('.top-row');
-const $addData = function (data) {
-  $topRow.append(`<p>${dataUser}</p>`);
-}
-$topRow.append('<p>Hello</p>');
-  $.ajax({
-    url: 'http://localhost:8080/api/featuredListings',
-    method: 'GET',
-    dataType: 'json',
-    success: (data) => {
-      const dataUser = data['users'][0];
-      $topRow.append(`<p>${dataUser.name}</p>`);
-      console.log('this request succeeded and here\'s the data', data['users'][0]);
-    },
-    error: (error) => {
-      console.log('this request failed and this was the error', error);
-    }
+// const  Router  = require("express");
+
+// Client facing scripts here
+$(document).ready(function () {
+  const $topRow = $(".top-row");
+  const $button = $(".search");
+
+  $button.on("click", (event) => {
+    event.preventDefault();
+    $topRow.empty();
+    const $addListing = function (listing) {
+      const $listingContainer = `<article>
+      <img src='${listing.photo_url}' />
+      <h3>${listing.title}</h3>
+      <h3>${listing.city}</h3>
+      <h3>${listing.price}</h3>
+      </article>`;
+      return $listingContainer;
+    };
+    const renderListing = function (city) {
+      console.log("CITYSDFADFADSFDSAFDSA", city.city);
+      const listings = city.city;
+
+      for (let listing of listings) {
+        console.log("CITY LISTING", listing);
+        const $item = $addListing(listing);
+        $(".top-row").append($item);
+      }
+    };
+    $(".button-search").on("submit", (event) => {
+      console.log("hello");
+    });
+    const $inputCity = $(".input-city").val();
+    const $inputPrice = $(".input-price").val();
+    console.log("price", $inputPrice);
+
+    const loadListings = function () {
+      $.ajax({
+        url: `http://localhost:8080/api/listingSearch`,
+        method: "GET",
+        dataType: "json",
+        data: { cityName: $inputCity, price: $inputPrice },
+        success: (data) => {
+          console.log("DATA", data);
+          const $inputValue = $(".input-search").val();
+
+          renderListing(data);
+        },
+        error: (error) => {
+          console.log("this request failed and this was the error", error);
+        },
+      });
+    };
+    loadListings();
   });
 });
-

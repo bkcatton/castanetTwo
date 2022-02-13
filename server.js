@@ -36,7 +36,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(express.static("public"));
 
-
 //DATABASE QUERIES
 const usersRoutes = require("./routes/usersQ");
 const newListing = require("./routes/newQ");
@@ -45,6 +44,7 @@ const Routes = require("./routes/usersQ");
 const favourites = require("./routes/favouritesQ");
 //mylistings query -> rendered on index
 const myListings = require("./routes/myListingsQ");
+// const myListing = require("./routes/myListingsQ");
 //search query -> rendered on index
 const listingSearch = require("./routes/listingSearchQ");
 //featured query -> rendered on index -> main view
@@ -62,23 +62,23 @@ const singleListing = require("./routes/singleListingQ");
 app.use("/api/users", usersRoutes(db)); //make new
 app.use("/api/favourites", favourites(db));
 app.use("/api/myListings", myListings(db));
-app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/featuredListings", featuredListings(db));
+app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
 app.use("/api/newListing", newListing(db));
-// app.use("/api/listings", listingsRoutes(db));
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
-  res.render('index')
-});
-app.get("/single_listing", (req, res) => {
-  res.render('single_listing')
-});
-app.get("/new", (req, res) => {
-  res.render('new')
+  res.render("index");
 });
 
+app.get("/single_listing", (req, res) => {
+  res.render("single_listing");
+});
+
+app.get("/new", (req, res) => {
+  res.render("new");
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
