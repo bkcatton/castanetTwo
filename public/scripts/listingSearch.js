@@ -34,7 +34,7 @@ $(document).ready(function () {
     });
     const $inputCity = $(".input-city").val();
     let $inputPrice = $(".input-price").val();
-    if ($inputPrice === "") {
+    if ($inputPrice < 1) {
       $inputPrice = 10000000;
     }
 
