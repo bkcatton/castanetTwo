@@ -6,8 +6,10 @@
 $(document).ready(function () {
   const $topRow = $(".top-row");
   const $button = $(".search");
+  document.cookie = "hello";
 
-  $button.on("click", (event) => {
+  $button.on("click", function (event) {
+    console.log("this", $(this));
     event.preventDefault();
     $topRow.empty();
     const $addListing = function (listing) {

@@ -25,8 +25,15 @@ body {
   overflow-x: hidden;
   color: seagreen;
 }
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
+}
 form {
-  margin-top: 25em;
+  margin-top: 5em;
+  margin-bottom: 10em;
   display: flex;
   justify-content: center;
 }
@@ -49,4 +56,75 @@ form {
 }
 .sold {
   background-color: brown;
+}
+
+.hidden {
+  display: none;
+}
+/* this makes the scroll in the price button go away */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.listing-container {
+  border: 2px solid rgb(143, 136, 136);
+  border-radius: 5px;
+  margin: 3em 3em;
+}
+.listing-container:hover {
+  box-shadow: 10px 5px 5px rgb(145, 136, 136);
+}
+.img-pic {
+  padding-top: 1em;
+  padding-left: 1em;
+  max-width: 15em;
+  /* border-radius: 50% 20%; */
+}
+.desc {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+.price {
+  padding-left: 1em;
+}
+.city {
+  padding-left: 1em;
+}
+.input-city {
+  border-radius: 3px;
+  margin-right: 0.5em;
+  width: 20%;
+  padding: 1%;
+  border: 1px;
+}
+.input-city:focus {
+  outline: none;
+}
+.input-price:focus {
+  outline: none;
+}
+.input-city:hover {
+  box-shadow: 5px 5px 5px rgb(145, 136, 136);
+}
+.input-price:hover {
+  box-shadow: 5px 5px 5px rgb(145, 136, 136);
+}
+.input-price {
+  border-radius: 3px;
+  margin-right: 0.5em;
+  width: 20%;
+  padding: 1%;
+  border: 2px;
+}
+.search {
+  border-radius: 3px;
+  border: 1px;
+  color: antiquewhite;
+  background-color: black;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.search:hover {
+  box-shadow: 5px 5px 5px rgb(145, 136, 136);
 }

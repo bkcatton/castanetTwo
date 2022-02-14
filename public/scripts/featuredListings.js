@@ -2,19 +2,19 @@
 // Client facing scripts here
 $(document).ready(function () {
   // // const $change = $('#target');
+
   const $topRow = $(".top-row");
   const $addListing = function (listing) {
     $(".top-row").on("click", (e) => {
       console.log("this is in the onclick", e.target.id);
-      localStorage.setItem('singleListingId', e.target.id);
-
+      localStorage.setItem("singleListingId", e.target.id);
     });
     // console.log(listing);
-    const $listingContainer = `<article>
-    <a name="imagelink" class="single-listing" href="/single_listing"><img src='${listing.photo_url}' id='${listing.id}'/></a>
-  <h3>${listing.title}</h3>
-  <h3>${listing.city}</h3>
-  <h3>$${listing.price}</h3>
+    const $listingContainer = `<article class= "listing-container">
+    <a name="imagelink" class="single-listing" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
+  <h3 class="desc">${listing.title}</h3>
+  <h3 class="price">${listing.city}</h3>
+  <h3 class="city">$${listing.price}</h3>
   </article>`;
 
     return $listingContainer;
