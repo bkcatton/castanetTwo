@@ -11,8 +11,8 @@
     <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="/styles/newlisting.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/listings.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
     <!-- <script type="text/javascript" src="/scripts/newQ.js"></script> -->
     <!-- <script type="text/javascript" src="/scripts/new.js"></script> -->
     <!-- <script type="text/javascript" src="/routes/new.js"></script> -->
@@ -23,7 +23,6 @@
   </head>
 
   <body>
-    <
     <nav>
       <a href="/"
         ><img
@@ -45,7 +44,7 @@
     <section class="add-new-property">
       <form id="new-form" action="/new" method="POST">
         <div>
-          <input placeholder="Description" type="text" name="title" />
+          <input placeholder="List Price" type="text" name="price" />
           <input placeholder="Address" type="text" name="address" />
         </div>
         <div>
@@ -66,7 +65,14 @@
           <input placeholder="Photo URL" type="text" name="photo_url" />
         </div>
         <div>
-          <input placeholder="List Price" type="text" name="price" />
+          <textarea
+            class="desc-text"
+            name="title"
+            placeholder="Property description"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <!-- <input placeholder="Description" type="text" name="title" /> -->
           <button type="submit" id="new-listing-button">Add Listing</button>
         </div>
       </form>

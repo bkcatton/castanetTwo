@@ -6,18 +6,25 @@
 $(document).ready(function () {
   const $topRow = $(".top-row");
   const $button = $(".search");
-  document.cookie = "hello";
+  // document.cookie = "hello";
 
   $button.on("click", function (event) {
     console.log("this", $(this));
     event.preventDefault();
     $topRow.empty();
+
     const $addListing = function (listing) {
-      const $listingContainer = `<article>
-      <img src='${listing.photo_url}' />
-      <h3>${listing.title}</h3>
-      <h3>${listing.city}</h3>
-      <h3>${listing.price}</h3>
+      localStorage.clear();
+
+      $(".top-row").on("click", (e) => {
+        console.log("this is in the onclick", e.target.id);
+        localStorage.setItem("singleListingId", e.target.id);
+      });
+      const $listingContainer = `<article class="listing-container">
+      <a name="imagelink" class="" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
+      <h3 class="desc">${listing.title}</h3>
+      <h3 class="city">${listing.city}</h3>
+      <h3 class="price">${listing.price}</h3>
       </article>`;
       return $listingContainer;
     };

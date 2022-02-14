@@ -28,7 +28,12 @@ $(document).ready(function () {
       url: "https://api.twilio.com/2010-04-01/Accounts/AC41beb9007c846c77c6b5cd581bf4b80b/Messages.json",
       method: "POST",
       dataType: "json",
-      data: { Body: "Hello from Twilio", From: '+18126132228', To: '+12506811829', 'AC41beb9007c846c77c6b5cd581bf4b80b':'37e5c34a613fc54aab9fa7b449a37099'},
+      data: {
+        Body: "Hello from Twilio",
+        From: "+18126132228",
+        To: "+12506811829",
+        AC41beb9007c846c77c6b5cd581bf4b80b: "37e5c34a613fc54aab9fa7b449a37099",
+      },
       success: (data) => {
         console.log("from our new mesage data", data);
       },
@@ -36,15 +41,13 @@ $(document).ready(function () {
         console.log("this request failed and this was the error", error);
       },
     });
-
-
-
-
   });
 
   const $addListing = function (listing) {
+    localStorage.clear();
+
     const $listingContainer = `<article class= "listing-container">
-    <a name="imagelink" class="single-listing" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
+    <img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/>
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">${listing.city}</h3>
   <h3 class="price">Asking Price: $${listing.price}</h3>
