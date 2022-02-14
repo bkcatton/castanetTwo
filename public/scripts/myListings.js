@@ -21,6 +21,7 @@ $(document).ready(function () {
     </form>
   </article>`;
 
+
     // const $listingDiv = $("<div>");
 
     // if (listing.isactive) {
@@ -34,6 +35,29 @@ $(document).ready(function () {
     // }
     return $listingContainer;
   };
+
+  $(".login").on("click", (e) => {
+    console.log("login clicked");
+    document.cookie = "username=logged in";
+    if (!document.cookie) {
+      const $login = `<a href="/login/1">
+      <h2><span class=""> Login </span></h2>
+    </a>`
+    $('nav').append($login);
+    }
+  });
+
+  $(".login").on("click", (e) => {
+    console.log("login clicked");
+    document.cookie = "";
+    if (document.cookie) {
+      const $logout = `<a href="/login/1">
+      <h2><span class=""> Logout </span></h2>
+    </a>`
+    $('nav').append($logout);
+    }
+  });
+
 
   const renderListing = function (myListings) {
     const array = myListings.myListings;
