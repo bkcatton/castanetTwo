@@ -1,45 +1,32 @@
 // Client facing scripts here
 // const accountSid = 'AC41beb9007c846c77c6b5cd581bf4b80b';
-// const authToken = '37e5c34a613fc54aab9fa7b449a37099';
-// const client = require('twilio')(accountSid, authToken);
+// const authToken = 'aee403aa64698b8e583e1230828db89a';
+//const {sendText} = require('./sms.js');
+//function (require) { const sendText = require('./sms.js'); });
+
+//$(function() { window.sendText = sendText});
+
 $(document).ready(function () {
+
   const $topRow = $(".top-row");
   const $link = $(".single-listing");
-  const $textMessage = $("#send-text");
+  const $textMessage = $("#send-text")
 
   $textMessage.on("click", function (e) {
     e.preventDefault();
     console.log("from the text messga button", e.target.id);
-    //     POST https://api.twilio.com/2010-04-01/Accounts/AC41beb9007c846c77c6b5cd581bf4b80b/Messages.json \
-    // --data-urlencode "Body=Hello from Twilio" \
-    // --data-urlencode "From=+18126132228" \
-    // --data-urlencode "To=+12506811829" \
-    // -u AC41beb9007c846c77c6b5cd581bf4b80b:$TWILIO_AUTH_TOKE
-    // const client = require('twilio')(accountSid, authToken);
-    // client.messages
-    //       .create({
-    //          body: 'This will be the body of the new message!',
-    //          from: '+18126132228',
-    //          to: '+12506811829'
-    //        })
-    //       .then(message => console.log(message.sid));
-
-    $.ajax({
-      url: "https://api.twilio.com/2010-04-01/Accounts/AC41beb9007c846c77c6b5cd581bf4b80b/Messages.json",
-      method: "POST",
-      dataType: "json",
-      data: { Body: "Hello from Twilio", From: '+18126132228', To: '+12506811829', 'AC41beb9007c846c77c6b5cd581bf4b80b':'37e5c34a613fc54aab9fa7b449a37099'},
-      success: (data) => {
-        console.log("from our new mesage data", data);
-      },
-      error: (error) => {
-        console.log("this request failed and this was the error", error);
-      },
-    });
-
-
-
-
+      $.ajax({
+        url: "http://localhost:8080/api/sendText",
+        method: "GET",
+        dataType: "json",
+        data: { id: localStorage.getItem("singleListingId") },
+        success: (data) => {
+          console.log("from our new data obj and button", data);
+        },
+        error: (error) => {
+          console.log("this request failed and this was the error", error);
+        },
+      });
   });
 
   const $addListing = function (listing) {
@@ -81,4 +68,7 @@ $(document).ready(function () {
     });
   };
   loadListings();
+
 });
+
+
