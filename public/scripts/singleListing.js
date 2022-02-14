@@ -30,8 +30,10 @@ $(document).ready(function () {
   });
 
   const $addListing = function (listing) {
+    localStorage.clear();
+
     const $listingContainer = `<article class= "listing-container">
-    <a name="imagelink" class="single-listing" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
+    <img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/>
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">${listing.city}</h3>
   <h3 class="price">Asking Price: $${listing.price}</h3>

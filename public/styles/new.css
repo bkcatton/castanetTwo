@@ -1,7 +1,8 @@
 .add-new-property {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  margin-left: 3em;
   flex-wrap: wrap;
 }
 
@@ -9,7 +10,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 50%;
 }
 
 .new-form-label {
@@ -27,12 +27,35 @@
   display: flex;
   padding-bottom: 5%;
   flex-wrap: wrap;
-
 }
 
 #new-listing-button {
-  color:whitesmoke;
-  background-color: steelblue;
+  color: whitesmoke;
+  background-color: black;
   width: 80%;
   height: 30%;
+  border-radius: 0.25em;
+  border: none;
+}
+
+input {
+  border-radius: 0.25em;
+  border: 0.5px solid black;
+}
+input:focus {
+  outline: none;
+}
+#new-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.desc-text {
+  border: 1px solid black;
+  resize: none;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+.desc-text:focus {
+  outline: none;
 }

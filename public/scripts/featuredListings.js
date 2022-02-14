@@ -11,10 +11,10 @@ $(document).ready(function () {
     });
     // console.log(listing);
     const $listingContainer = `<article class= "listing-container">
-    <a name="imagelink" class="single-listing" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
+    <a name="imagelink" class="" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
   <h3 class="desc">${listing.title}</h3>
-  <h3 class="price">${listing.city}</h3>
-  <h3 class="city">$${listing.price}</h3>
+  <h3 class="city">${listing.city}</h3>
+  <h3 class="price">$${listing.price}</h3>
   </article>`;
 
     return $listingContainer;
