@@ -43,12 +43,11 @@ $(document).ready(function () {
   });
 
   const $addListing = function (listing) {
-
-    const $listingContainer = `<article>
-    <a name="imagelink" class="single-listing" href="/single_listing"><img src='${listing.photo_url}' id='${listing.id}'/></a>
-  <h3>${listing.title}</h3>
-  <h3>${listing.city}</h3>
-  <h3>Asking Price: $${listing.price}</h3>
+    const $listingContainer = `<article class= "listing-container">
+    <a name="imagelink" class="single-listing" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
+  <h3 class="desc">${listing.title}</h3>
+  <h3 class="city">${listing.city}</h3>
+  <h3 class="price">Asking Price: $${listing.price}</h3>
   <h3>${listing.street_name_number}</h3>
   <h3>${listing.postal_code}</h3>
   <h3>Square Footage: ${listing.sq_ft} square feet</h3>
@@ -71,7 +70,7 @@ $(document).ready(function () {
       url: "http://localhost:8080/api/singleListing",
       method: "GET",
       dataType: "json",
-      data: { id: localStorage.getItem('singleListingId') },
+      data: { id: localStorage.getItem("singleListingId") },
       success: (data) => {
         console.log("from our new data obj", data);
         renderListing(data.listing);
@@ -80,8 +79,6 @@ $(document).ready(function () {
         console.log("this request failed and this was the error", error);
       },
     });
-  }
+  };
   loadListings();
-
 });
-
