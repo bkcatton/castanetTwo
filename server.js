@@ -24,10 +24,12 @@ app.use(morgan("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieSession({
-  name: "session",
-  keys: ["user_id"]
-}))
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["user_id"],
+  })
+);
 
 // app.use(
 //   "/styles",
@@ -44,13 +46,13 @@ app.use(express.static("public"));
 //DATABASE QUERIES
 const usersRoutes = require("./routes/login");
 // const newListing = require("./routes/new");
-const newRoutes = require('./routes/new');
+const newRoutes = require("./routes/new");
 // const Routes = require("./routes/usersQ");
 //favourites query ->rendered on index
 const favorites = require("./routes/favoritesQ");
 //mylistings query -> rendered on index
 const myListings = require("./routes/myListingsQ");
-// const myListing = require("./routes/myListingsQ");
+
 //search query -> rendered on index
 const listingSearch = require("./routes/listingSearchQ");
 //featured query -> rendered on index -> main view
@@ -63,7 +65,6 @@ const singleListing = require("./routes/singleListingQ");
 const loginRoutes = require("./routes/login");
 
 //new POST query -> post to database from new
-// const postNew = require("./routes/postNewQ");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -74,9 +75,8 @@ app.use("/api/myListings", myListings(db));
 app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
-// app.use("/api/newListing", newListing(db));
-app.use("/new", newRoutes(db))
-app.use('/', loginRoutes(db));
+app.use("/new", newRoutes(db));
+app.use("/", loginRoutes(db));
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
@@ -92,12 +92,18 @@ app.get("/new", (req, res) => {
 });
 
 app.get("/favorites", (req, res) => {
-  res.render('favorites');
-})
+  res.render("favorites");
+});
 
 app.get("/myListings", (req, res) => {
-  res.render('myListings');
-})
+  const user = req.session.user_id;
+  console.log("user", user);
+
+  const templateVars = {
+    user,
+  };
+  res.render("myListings", templateVars);
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

@@ -15,7 +15,8 @@ nav {
     1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
   margin-right: 10%;
 }
-nav img:hover, nav h2:hover {
+nav img:hover,
+nav h2:hover {
   cursor: pointer;
 }
 
@@ -44,6 +45,8 @@ form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color:rgb(146, 250, 193);
+  background-color: rgb(146, 250, 193);
 }
-
+.sold {
+  background-color: brown;
+}
