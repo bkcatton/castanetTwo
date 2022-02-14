@@ -34,15 +34,7 @@
   </head>
 
   <body>
-    <nav>
-      <a href='/'><img src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"></a>
-      <h2><span class=""> Buy </span></h2>
-      <a href='/new'><h2><span class=""> Sell </span></h2></a>
-      <a href='./favorites'><h2><span class=""> Favourites </span></h2></a>
-      <a href='./myListings'><h2><span class=""> My Listings </span></h2></a>
-     <a href='/login/1'><h2><span class=""> Login </span></h2></a>
-    </nav>
-
+    <%- include('./partials/_header'); %>
     <div>
       <form action="/" method="GET">
         <input type="text" placeholder="search city" class="input-city" />
@@ -53,10 +45,7 @@
     <main class="top-row">
       <div></div>
     </main>
-
-    <footer class="main-footer">
-      <span> Cast-a-Net <sup>©</sup></span>
-      <span class="footer-link"><a href="#top">Back to top</a></span>
-    </footer>
+    <%- include('./partials/_footer'); %>
+    <!-- <%=- include('partials/_footer') %> -->
   </body>
 </html>

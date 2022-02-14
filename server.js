@@ -52,9 +52,7 @@ const newRoutes = require("./routes/new");
 const favorites = require("./routes/favoritesQ");
 //mylistings query -> rendered on index
 const myListings = require("./routes/myListingsQ");
-//Delete item
-const deleteListing = require("./routes/deleteListingQ");
-// const myListing = require("./routes/myListingsQ");
+
 //search query -> rendered on index
 const listingSearch = require("./routes/listingSearchQ");
 //featured query -> rendered on index -> main view
@@ -67,7 +65,6 @@ const singleListing = require("./routes/singleListingQ");
 const loginRoutes = require("./routes/login");
 
 //new POST query -> post to database from new
-// const postNew = require("./routes/postNewQ");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -78,8 +75,6 @@ app.use("/api/myListings", myListings(db));
 app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
-// app.use("/api/myListings", deleteListing(db));
-// app.use("/api/newListing", newListing(db));
 app.use("/new", newRoutes(db));
 app.use("/", loginRoutes(db));
 
@@ -101,7 +96,13 @@ app.get("/favorites", (req, res) => {
 });
 
 app.get("/myListings", (req, res) => {
-  res.render("myListings");
+  const user = req.session.user_id;
+  console.log("user", user);
+
+  const templateVars = {
+    user,
+  };
+  res.render("myListings", templateVars);
 });
 
 app.listen(PORT, () => {

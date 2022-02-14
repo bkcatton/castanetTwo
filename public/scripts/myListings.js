@@ -1,6 +1,5 @@
 // Client facing scripts here
 $(document).ready(function () {
-  // // const $change = $('#target');
   const $topRow = $(".top-row");
   const $addListing = function (listing) {
     console.log("kjhfgkjhdfsgkjhdfsgkj", listing);
@@ -12,8 +11,27 @@ $(document).ready(function () {
   <form method="POST" action="/api/myListings">
   <button id="${listing.id}" type="submit"> Delete </button>
   </form>
+
+  <form class="isActiveForm" method="">
+      <select name="isActive" id="isActive">
+        <option value="">--Is this listing available--</option>
+        <option value="true">Available</option>
+        <option value="false">Sold</option>
+      </select>
+    </form>
   </article>`;
 
+    // const $listingDiv = $("<div>");
+
+    // if (listing.isactive) {
+    //   const $para = $("<p>").text("true");
+    //   return $listingDiv.append($listingContainer, $para);
+    // } else if (!listing.isactive) {
+    //   const $para2 = $("<p>");
+
+    //   $(".single-listing").addClass("sold");
+    //   return $listingDiv.append($listingContainer, $para2);
+    // }
     return $listingContainer;
   };
 
@@ -45,6 +63,7 @@ $(document).ready(function () {
   $topRow.on("click", (event) => {
     console.log("hello");
     console.log(event.target.id);
+    event.stopPropagation();
 
     localStorage.setItem("deleteItem", event.target.id);
     const loadListings = function () {
