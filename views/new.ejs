@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="/styles/listings.css" type="text/css" />
     <link rel="stylesheet" href="/styles/home.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new.css" type="text/css" />
-    <script type="text/javascript" src="/scripts/newQ.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/newQ.js"></script> -->
+    <!-- <script type="text/javascript" src="/scripts/new.js"></script> -->
+    <!-- <script type="text/javascript" src="/routes/new.js"></script> -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
     <!-- <link rel="stylesheet" href="../public/styles/home.css" type="text/css" /> -->
@@ -21,51 +23,64 @@
   </head>
 
   <body>
-    <<nav>
-      <a href='/'><img src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"></a>
+    <
+    <nav>
+      <a href="/"
+        ><img
+          src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
+      /></a>
       <h2><span class=""> Buy </span></h2>
-      <a href='/new'><h2><span class=""> Sell </span></h2></a>
-      <a href='./favorites'><h2><span class=""> Favourites </span></h2></a>
-      <a href='./myListings'><h2><span class=""> My Listings </span></h2></a>
+      <a href="/new"
+        ><h2><span class=""> Sell </span></h2></a
+      >
+      <a href="./favorites"
+        ><h2><span class=""> Favourites </span></h2></a
+      >
+      <a href="./myListings"
+        ><h2><span class=""> My Listings </span></h2></a
+      >
       <h2><span class=""> Login </span></h2>
     </nav>
-    <h1 class='new-form-label'>List your property:</h1>
+    <h1 class="new-form-label">List your property:</h1>
     <section class="add-new-property">
       <form id="new-form" action="/new" method="POST">
         <div>
-          <input placeholder="Description" type="text" name='title'/>
-          <input placeholder="Address" type="text" name='address' />
+          <input placeholder="Description" type="text" name="title" />
+          <input placeholder="Address" type="text" name="address" />
         </div>
         <div>
-          <input placeholder="City" type="text" name='city'/>
-          <input placeholder="Postal Code" type="text" name='postcode'/>
+          <input placeholder="City" type="text" name="city" />
+          <input placeholder="Postal Code" type="text" name="postcode" />
         </div>
         <div>
-          <input placeholder="Square ft" type="text" name='sqft' />
+          <input placeholder="Square ft" type="text" name="sqft" />
 
-          <input placeholder="Type" type="text" name='type' />
+          <input placeholder="Type" type="text" name="type" />
         </div>
         <div>
-          <input placeholder="Bedrooms" type="text" name='bedrooms' />
-          <input placeholder="Bathrooms" type="text" name='bathrooms' />
+          <input placeholder="Bedrooms" type="text" name="bedrooms" />
+          <input placeholder="Bathrooms" type="text" name="bathrooms" />
         </div>
         <div>
-          <input placeholder="Parking Spaces" type="text" name='parking' />
-          <input placeholder="Photo URL" type="text" name='photo_url' />
+          <input placeholder="Parking Spaces" type="text" name="parking" />
+          <input placeholder="Photo URL" type="text" name="photo_url" />
         </div>
         <div>
-          <input placeholder="List Price" type="text" name='price' />
-          <button type="submit" id='new-listing-button'>Add Listing</button>
+          <input placeholder="List Price" type="text" name="price" />
+          <button type="submit" id="new-listing-button">Add Listing</button>
         </div>
       </form>
     </section>
 
-    <main>
-    </main>
+    <main></main>
 
     <footer class="main-footer">
-      <span><h1>Cast-a-Net <sup>©</sup></h1></span>
-      <img src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true">
+      <span
+        ><h1>Cast-a-Net <sup>©</sup></h1></span
+      >
+      <img
+        src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
+      />
       <span class="footer-link"><a href="#top">Back to top</a></span>
     </footer>
   </body>

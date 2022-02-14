@@ -10,7 +10,6 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 
-
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -80,18 +79,26 @@ app.use("/", loginRoutes(db));
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
+  const user = req.session.user_id;
+  console.log("index", user);
   res.render("index");
 });
 
 app.get("/single_listing", (req, res) => {
+  const user = req.session.user_id;
+  console.log("single listing", user);
   res.render("single_listing");
 });
 
-app.get("/new", (req, res) => {
-  res.render("new");
-});
+// app.get("/new", (req, res) => {
+//   const user = req.session.user_id;
+//   console.log("new", user);
+//   res.render("new");
+// });
 
 app.get("/favorites", (req, res) => {
+  const user = req.session.user_id;
+  console.log("favorites", user);
   res.render("favorites");
 });
 

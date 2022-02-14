@@ -5,25 +5,24 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
     // console.log(query);
     db.query(`SELECT * FROM listings;`)
-      .then(data => {
+      .then((data) => {
         const templateVars = data.rows;
         res.render("new", { templateVars });
       })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
       });
   });
-  router.post('/', (req, res) => {
-    db.query(`INSERT INTO listings (id, title, street_name_number, city, postal_code, sq_ft, seller_id, isActive,
+  router.post("/", (req, res) => {
+    db.query(
+      `INSERT INTO listings (id, title, street_name_number, city, postal_code, sq_ft, seller_id, isActive,
       property_type,
       bedroom_number,
       bathroom_number,
@@ -32,15 +31,29 @@ module.exports = (db) => {
       price
     )
      VALUES (nextval('id_sequence'), $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *;`,
-    [ req.body.title, req.body.address, req.body.city, req.body.postcode, req.body.sqft, 5, true, req.body.type, req.body.bedrooms, req.body.bathrooms, req.body.parking, req.body.photo_url, req.body.price])
-      .then(data => {
+      [
+        req.body.title,
+        req.body.address,
+        req.body.city,
+        req.body.postcode,
+        req.body.sqft,
+        5,
+        true,
+        req.body.type,
+        req.body.bedrooms,
+        req.body.bathrooms,
+        req.body.parking,
+        req.body.photo_url,
+        req.body.price,
+      ]
+    )
+      .then((data) => {
         // const templateVars = data.rows;
-        res.redirect('/');
+        console.log("added");
+        res.redirect("/");
       })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
       });
   });
   return router;
