@@ -15,8 +15,8 @@ module.exports = (db) => {
   router.post("/", (req, res) => {
     console.log("the data coming through", req.body.id, req.session.user_id);
     db.query(
-      `INSERT INTO favorites(listing_id,user_id)
-    VALUES($1,$2)`,
+      `INSERT INTO favorites(id,listing_id,user_id)
+    VALUES(nextval('id_sequence'),$1,$2)`,
       [req.body.id, req.session.user_id]
     )
       .then((data) => {

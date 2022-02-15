@@ -1,5 +1,6 @@
 // Client facing scripts here
 $(document).ready(function () {
+<<<<<<< HEAD
   // const $topRow = $(".top-row");
   // const $form = $(".isActiveForm");
   // $(document).on("click", ".thisone", function (e) {
@@ -18,6 +19,8 @@ $(document).ready(function () {
       contentType: type
     });
   }
+=======
+>>>>>>> master
   const $addListing = function (listing) {
     localStorage.clear();
 
@@ -38,24 +41,6 @@ $(document).ready(function () {
   <button id="${listing.id}" type="submit"> Sold! </button>
     </form>
   </article>`;
-
-    // const $listingDiv = $("<div>");
-
-    // if (listing.isactive) {
-    //   const $para = $("<p>").text("true");
-    //   return $listingDiv.append($listingContainer, $para);
-    // } else if (!listing.isactive) {
-    //   const $para2 = $("<p>");
-
-    //   $(".single-listing").addClass("sold");
-    //   return $listingDiv.append($listingContainer, $para2);
-    // }
-    // const $singleListing = $(".thisone");
-    // $singleListing.on("click", function (event) {
-    //   console.log(event.target.id);
-    //   console.log("h3 clicked", $(this));
-    //   event.preventDefault();
-    // });
 
     return $listingContainer;
   };

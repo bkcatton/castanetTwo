@@ -26,7 +26,7 @@ $(document).ready(function () {
       <h3 class="desc">${listing.title}</h3>
       <h3 class="city">${listing.city}</h3>
       <h3 class="price">${listing.price}</h3>
-      <button>fave</button>
+      <button class="fave" id="${listing.id}">fave</button>
       </article>`;
       return $listingContainer;
     };
