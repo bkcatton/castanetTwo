@@ -70,25 +70,4 @@ const addFavorite = function (event) {
       console.log("this request failed and this was the error", error);
     },
   });
-<<<<<<< HEAD
-  const btn = $('#button');
-
-  $(window).scroll(function() {
-    if ($(window).scrollTop() < 400) {
-      btn.slideDown();
-    }
-  });
-
-  btn.on('click', function(e) {
-    e.preventDefault();
-    $('html, body').animate({scrollTop:0}, '300');
-  });
-
-  $('.logo').on('click', function(e) {
-    e.preventDefault();
-    $('html, body').animate({scrollTop:0}, '300');
-  });
-});
-=======
 };
->>>>>>> master
