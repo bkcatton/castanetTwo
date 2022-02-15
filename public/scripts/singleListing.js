@@ -11,28 +11,15 @@ $(document).ready(function () {
   const $topRow = $(".top-row");
   const $link = $(".single-listing");
   const $textMessage = $("#send-text")
+  let $currentListing = 0;
 
-  $textMessage.on("click", function (e) {
-    e.preventDefault();
-    console.log("from the text messga button", e.target.id);
-      $.ajax({
-        url: "http://localhost:8080/api/sendText",
-        method: "GET",
-        dataType: "json",
-        data: { id: localStorage.getItem("singleListingId") },
-        success: (data) => {
-          console.log("from our new data obj and button", data);
-        },
-        error: (error) => {
-          console.log("this request failed and this was the error", error);
-        },
-      });
-  });
+
 
   const $addListing = function (listing) {
     localStorage.clear();
 
-    const $listingContainer = `<article class= "listing-container">
+    const $listingContainer = `
+    <article class= "listing-container">
     <img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/>
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">${listing.city}</h3>
@@ -45,13 +32,13 @@ $(document).ready(function () {
   <h3>Number of Bathrooms: ${listing.bathroom_number}</h3>
   <h3>Number of Parking Spaces:${listing.parking_spaces}</h3>
   </article>`;
-
     return $listingContainer;
   };
   const renderListing = function (listings) {
     for (let listing of listings) {
       const $item = $addListing(listing);
       $(".top-row").append($item);
+      $currentListing = listing.id;
     }
   };
   const loadListings = function () {
@@ -70,6 +57,28 @@ $(document).ready(function () {
     });
   };
   loadListings();
+  $textMessage.on("submit", function (e) {
+    e.preventDefault();
+    console.log("from the text messga button", e.target.id);
+    const $messageBody = $('#message-body').val();
+    const $buyerNumber = $('#buyer_number').val();
+    // console.log($buyerNumber);
+    // console.log($messageBody);
+    console.log($currentListing);
+
+      $.ajax({
+        url: "http://localhost:8080/api/sendText",
+        method: "GET",
+        dataType: "json",
+        data: {message: $messageBody, buyer_number: $buyerNumber, currentListing: $currentListing},
+        success: (data) => {
+          console.log("from our new data obj and button", data);
+        },
+        error: (error) => {
+          console.log("this request failed and this was the error", error);
+        },
+      });
+  });
 
 });
 

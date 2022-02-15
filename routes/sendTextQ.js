@@ -5,11 +5,16 @@ const {sendText} = require('../public/scripts/sms')
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    console.log("inside Send Text query/path", req.query);
-    sendText('+12506811829');
+    //console.log("before the function call", req.query.message);
+    const messageBody = req.query.message;
+    const buyerNumber = req.query.buyer_number;
+    const currentListing = req.query.currentListing;
+    console.log("from the backend query", currentListing);
+
+    sendText('+12506811829', `${messageBody}`);
+
     // db.query(
-    //   `SELECT * FROM listings
-    // WHERE id = $1;`,
+    //   `SELECT * FROM users;`,
     //   [req.query.id]
     // )
     //   .then((data) => {
@@ -22,6 +27,7 @@ module.exports = (db) => {
     //   .catch((err) => {
     //     res.status(500).json({ error: err.message });
     //   });
+
   });
   return router;
 };
