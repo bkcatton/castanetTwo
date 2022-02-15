@@ -12,7 +12,7 @@ CREATE TABLE listings (
   postal_code TEXT,
   sq_ft SMALLINT,
   seller_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  isActive BOOLEAN,
+  isActive TEXT,
   property_type VARCHAR(255) NOT NULL,
   bedroom_number SMALLINT,
   bathroom_number SMALLINT,
