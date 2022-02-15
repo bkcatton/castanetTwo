@@ -62,6 +62,8 @@ const singleListing = require("./routes/singleListingQ");
 
 //send text query
 const sendTextQuery = require("./routes/sendTextQ");
+//receive text query
+const receiveTextQuery = require("./routes/receiveTextQ");
 
 // login routes
 const loginRoutes = require("./routes/login");
@@ -80,6 +82,7 @@ app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
 app.use("/api/sendText", sendTextQuery(db));
+app.use("/api/receiveText", receiveTextQuery(db));
 app.use("/new", newRoutes(db));
 app.use("/", loginRoutes(db));
 app.use("/", logoutRoutes(db));
