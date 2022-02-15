@@ -7,13 +7,10 @@
 //$(function() { window.sendText = sendText});
 
 $(document).ready(function () {
-
   const $topRow = $(".top-row");
   const $link = $(".single-listing");
-  const $textMessage = $("#send-text")
+  const $textMessage = $("#send-text");
   let $currentListing = 0;
-
-
 
   const $addListing = function (listing) {
     localStorage.clear();
@@ -60,26 +57,29 @@ $(document).ready(function () {
   $textMessage.on("submit", function (e) {
     e.preventDefault();
     console.log("from the text messga button", e.target.id);
-    const $messageBody = $('#message-body').val();
-    const $buyerNumber = $('#buyer_number').val();
+    const $messageBody = $("#message-body");
+    const $buyerNumber = $("#buyer_number");
     // console.log($buyerNumber);
     // console.log($messageBody);
     console.log($currentListing);
 
-      $.ajax({
-        url: "http://localhost:8080/api/sendText",
-        method: "GET",
-        dataType: "json",
-        data: {message: $messageBody, buyer_number: $buyerNumber, currentListing: $currentListing},
-        success: (data) => {
-          console.log("from our new data obj and button", data);
-        },
-        error: (error) => {
-          console.log("this request failed and this was the error", error);
-        },
-      });
+    $.ajax({
+      url: "http://localhost:8080/api/sendText",
+      method: "GET",
+      dataType: "json",
+      data: {
+        message: $messageBody.val(),
+        buyer_number: $buyerNumber.val(),
+        currentListing: $currentListing,
+      },
+      success: (data) => {
+        console.log("from our new data obj and button", data);
+        $messageBody.val("");
+        $buyerNumber.val("");
+      },
+      error: (error) => {
+        console.log("this request failed and this was the error", error);
+      },
+    });
   });
-
 });
-
-

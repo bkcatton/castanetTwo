@@ -23,16 +23,20 @@
 </nav>
 
 <%} else {%>
-<nav>
-  <a href="/">
-    <img
-      src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
-    />
-  </a>
-  <h2><span class=""> Buy </span></h2>
+<nav class="logged-out">
+  <div>
+    <a href="/">
+      <img
+        src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
+      />
+    </a>
+  </div>
+  <div class="logged-off">
+    <!-- <h2><span class=""> Buy </span></h2> -->
 
-  <a href="/login/1">
-    <h2><span class="login"> Login </span></h2>
-  </a>
+    <a class="logit" href="/login/1">
+      <h2><span> Login </span></h2>
+    </a>
+  </div>
 </nav>
 <%}%>

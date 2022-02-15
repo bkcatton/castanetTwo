@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const router = express.Router();
-const {sendText} = require('../public/scripts/sms')
+const { sendText } = require("../public/scripts/sms");
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -11,23 +11,28 @@ module.exports = (db) => {
     const currentListing = req.query.currentListing;
     console.log("from the backend query", currentListing);
 
-    sendText('+12506811829', `${messageBody}`);
+    sendText("+12506811829", `${messageBody}`);
+    console.log(
+      "body",
+      messageBody,
+      "buyer number",
+      buyerNumber,
+      "cur listing",
+      currentListing
+    );
+    db.query(
+      `INSERT INTO messages (message_body,receiver_id)
+      VALUES ($1,$2) RETURNING *;`,
+      [messageBody, currentListing]
+    )
+      .then((data) => {
+        console.log("the data it should be", data.rows);
 
-    // db.query(
-    //   `SELECT * FROM users;`,
-    //   [req.query.id]
-    // )
-    //   .then((data) => {
-    //     const listing = data.rows;
-    //     res.json({ listing });
-    //     console.log("user id", req.session.user_id);
-
-    //     console.table("this is the listign", listing);
-    //   })
-    //   .catch((err) => {
-    //     res.status(500).json({ error: err.message });
-    //   });
-
+        console.log("added  to msgs");
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
   });
   return router;
 };
