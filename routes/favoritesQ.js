@@ -33,7 +33,7 @@ module.exports = (db) => {
     )
       .then((data) => {
         console.log("deleted from faves?");
-        res.redirect("/");
+        // res.redirect("/");
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
