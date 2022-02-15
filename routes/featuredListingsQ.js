@@ -12,5 +12,20 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
+  router.post("/", (req, res) => {
+    console.log("the data coming through", req.body.id, req.session.user_id);
+    db.query(
+      `INSERT INTO favorites(listing_id,user_id)
+    VALUES($1,$2)`,
+      [req.body.id, req.session.user_id]
+    )
+      .then((data) => {
+        console.log("added to faves?");
+        // res.redirect("/myListings");
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
   return router;
 };
