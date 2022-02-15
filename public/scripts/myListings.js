@@ -1,6 +1,5 @@
 // Client facing scripts here
 $(document).ready(function () {
-<<<<<<< HEAD
   // const $topRow = $(".top-row");
   // const $form = $(".isActiveForm");
   // $(document).on("click", ".thisone", function (e) {
@@ -9,18 +8,16 @@ $(document).ready(function () {
   // });
   $.delete = function (url, data, callback, type) {
     if ($.isFunction(data)) {
-      type = type || callback, callback = data, data = {}
+      (type = type || callback), (callback = data), (data = {});
     }
     return $.ajax({
       url: url,
-      type: 'DELETE',
+      type: "DELETE",
       success: callback,
       data: data,
-      contentType: type
+      contentType: type,
     });
-  }
-=======
->>>>>>> master
+  };
   const $addListing = function (listing) {
     localStorage.clear();
 
@@ -30,8 +27,14 @@ $(document).ready(function () {
     });
     // console.log("kjhfgkjhdfsgkjhdfsgkj", listing);
     const $listingContainer = `<article class="listing-container">
-    <a name="imagelink" class="" href="/single_listing"><img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/></a>
-    ${listing.isactive === 'false' ? `<img class="img-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>` : `<h3>Active</h3>` }
+    <a name="imagelink" class="" href="/single_listing"><img class="img-pic" src='${
+      listing.photo_url
+    }' id='${listing.id}'/></a>
+    ${
+      listing.isactive === "false"
+        ? `<img class="img-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>`
+        : `<h3>Active</h3>`
+    }
   <h3 class="price">$${listing.price}</h3>
   <form id="button-form" method="POST">
   <button id="${listing.id}" type="submit"> Delete </button>
@@ -56,13 +59,13 @@ $(document).ready(function () {
   };
   const loadListings = function () {
     $.get("/api/myListings")
-    .then((data) => {
-      console.log('loaded')
-      renderListing(data);
-    })
-    .catch ((error) => {
-      console.log(error);
-    })
+      .then((data) => {
+        console.log("loaded");
+        renderListing(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   loadListings();
 
@@ -71,28 +74,24 @@ $(document).ready(function () {
 
     console.log("the target", event.target);
     event.preventDefault();
-    const id = event.target.id
-    console.log('id =', id);
+    const id = event.target.id;
+    console.log("id =", id);
 
-    $.delete(`/api/myListings/${id}`)
-      .then((data) => {
-        console.log('deleted', data);
-        loadListings();
-      });
-
+    $.delete(`/api/myListings/${id}`).then((data) => {
+      console.log("deleted", data);
+      loadListings();
+    });
   });
 
   $(document).on("click", "#sold-form", function (event) {
-
     console.log("the target", event.target);
     event.preventDefault();
-    const id = event.target.id
-    console.log('id =', id);
+    const id = event.target.id;
+    console.log("id =", id);
 
-    $.post(`/api/myListings/${id}`)
-      .then((data) => {
-        console.log(data);
-      })
+    $.post(`/api/myListings/${id}`).then((data) => {
+      console.log(data);
+    });
     // $.post({
     //   url: "/api/myListings",
     //   method: "POST",
@@ -106,5 +105,5 @@ $(document).ready(function () {
     //     console.log("this request failed and this was the error", error);
     //   },
     // });
-  })
+  });
 });
