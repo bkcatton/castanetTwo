@@ -18,6 +18,7 @@ $(document).ready(function () {
     const $listingContainer = `
     <article class= "listing-container">
     <img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/>
+    ${listing.isactive === 'false' ? `<img class="img-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>` : `<h3>Active</h3>` }
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">${listing.city}</h3>
   <h3 class="price">Asking Price: $${listing.price}</h3>
