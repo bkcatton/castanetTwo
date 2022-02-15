@@ -20,9 +20,24 @@ module.exports = (db) => {
       "cur listing",
       currentListing
     );
+
     db.query(
-      `INSERT INTO messages (message_body,receiver_id)
-      VALUES ($1,$2) RETURNING *;`,
+      `INSERT INTO users (id, name, phone_number, is_admin)
+      VALUES (nextval('id_sequence'), ) RETURNING *;`,
+      [messageBody, currentListing]
+    )
+      .then((data) => {
+        console.log("the data it should be", data.rows);
+
+        console.log("added  to msgs");
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+
+    db.query(
+      `INSERT INTO messages (id, message_body,receiver_id)
+      VALUES (nextval('id_sequence'), $1,$2) RETURNING *;`,
       [messageBody, currentListing]
     )
       .then((data) => {

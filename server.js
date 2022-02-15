@@ -64,6 +64,10 @@ const singleListing = require("./routes/singleListingQ");
 const sendTextQuery = require("./routes/sendTextQ");
 //receive text query
 const receiveTextQuery = require("./routes/receiveTextQ");
+//all messages query -> render on myMessages
+const myMessages = require("./routes/myMessagesQ");
+//all messages query -> render on myMessages
+const oneConversation = require("./routes/oneConversationQ");
 
 // login routes
 const loginRoutes = require("./routes/login");
@@ -83,6 +87,8 @@ app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
 app.use("/api/sendText", sendTextQuery(db));
 app.use("/api/receiveText", receiveTextQuery(db));
+app.use("/api/myMessages", myMessages(db)); //gets all distinct conversations
+app.use("/api/oneConversation", oneConversation(db)); //gets all messages from one conversation
 app.use("/new", newRoutes(db));
 app.use("/", loginRoutes(db));
 app.use("/", logoutRoutes(db));
@@ -129,6 +135,15 @@ app.get("/myListings", (req, res) => {
     user,
   };
   res.render("myListings", templateVars);
+});
+//this will direct to a page that shows all of the logged in users messages
+app.get("/myMessages", (req, res) => {
+  const user = req.session.user_id;
+
+  const templateVars = {
+    user,
+  };
+  res.render("myMessages", templateVars);
 });
 
 app.listen(PORT, () => {

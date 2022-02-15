@@ -60,12 +60,15 @@ $(document).ready(function () {
       },
     });
   };
+
+  //this will load all listings here
   loadListings();
   $textMessage.on("submit", function (e) {
     e.preventDefault();
     console.log("from the text messga button", e.target.id);
     const $messageBody = $("#message-body");
     const $buyerNumber = $("#buyer_number");
+    const $buyerName = $("#buyer_name");
     // console.log($buyerNumber);
     // console.log($messageBody);
     console.log($currentListing);
