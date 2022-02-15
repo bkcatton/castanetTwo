@@ -52,6 +52,7 @@ const favorites = require("./routes/favoritesQ");
 //mylistings query -> rendered on index
 const myListings = require("./routes/myListingsQ");
 
+
 //search query -> rendered on index
 const listingSearch = require("./routes/listingSearchQ");
 //featured query -> rendered on index -> main view
