@@ -19,12 +19,25 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
-  router.post("/", (req, res) => {
-    db.query(`DELETE FROM listings WHERE listings.id = $1 RETURNING *`, [
-      req.body.id,
-    ])
+  router.delete("/:id", (req, res) => {
+    const id = req.params.id;
+    db.query(`DELETE FROM listings WHERE listings.id = $1 RETURNING *`, [id])
       .then((data) => {
-        res.redirect("/myListings");
+        // res.redirect("/myListings");
+        const deleted = data.rows.length;
+        res.json({id, deleted});
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+  router.post("/:id", (req, res) => {
+    // const soldItem = localStorage.getItem('solditem');
+    // console.log(soldItem);
+    db.query(`UPDATE listings SET isActive = 'false' WHERE listings.id = $1 RETURNING *`, [req.params.id])
+      .then((data) => {
+        // res.redirect("/myListings");
+        res.json(data.rows[0]);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
