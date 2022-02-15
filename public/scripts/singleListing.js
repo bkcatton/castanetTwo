@@ -18,7 +18,11 @@ $(document).ready(function () {
     const $listingContainer = `
     <article class= "listing-container">
     <img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/>
-    ${listing.isactive === 'false' ? `<img class="img-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>` : `<h3>Active</h3>` }
+    ${
+      listing.isactive === "false"
+        ? `<img class="img-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>`
+        : `<h3>Active</h3>`
+    }
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">${listing.city}</h3>
   <h3 class="price">Asking Price: $${listing.price}</h3>
@@ -29,6 +33,8 @@ $(document).ready(function () {
   <h3>Number of Bedrooms: ${listing.bedroom_number}</h3>
   <h3>Number of Bathrooms: ${listing.bathroom_number}</h3>
   <h3>Number of Parking Spaces:${listing.parking_spaces}</h3>
+  <button class="fave" id="${listing.id}">fave</button>
+
   </article>`;
     return $listingContainer;
   };
@@ -84,4 +90,20 @@ $(document).ready(function () {
     });
     $textMessage.trigger("reset");
   });
+  $(document).on("click", ".fave", addFavorite);
 });
+
+const addFavorite = function (event) {
+  const id = this.id;
+
+  $.ajax({
+    url: `/api/featuredListings/${id}`,
+    method: "POST",
+    success: (data) => {
+      console.log("faveclick", data);
+    },
+    error: (error) => {
+      console.log("this request failed and this was the error", error);
+    },
+  });
+};

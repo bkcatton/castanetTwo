@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   const $topRow = $(".top-row");
   const $addListing = function (listing) {
-    console.log(listing.isactive);
+    // console.log(listing.isactive);
     $(".img-pic").on("click", (e) => {
       // console.log("this is in the onclick", e.target.id);
       localStorage.setItem("singleListingId", e.target.id);
@@ -55,29 +55,19 @@ $(document).ready(function () {
 
   //to unfave a listing
 
-  $(document).on("click", ".fave", function (event) {
-    localStorage.setItem("fave", event.target.id);
-    // console.log("clicked on fave button", event.target.id);
-    // console.log($(this));
-    event.preventDefault();
-
-    // console.log("the target", event.target);
-
-    const loadListings = function () {
-      $.ajax({
-        url: "http://localhost:8080/api/featuredListings",
-        method: "POST",
-        dataType: "json",
-        data: { id: event.target.id },
-        success: (data) => {
-          console.log("faveclick", data);
-          // renderListing(data.listing);
-        },
-        error: (error) => {
-          console.log("this request failed and this was the error", error);
-        },
-      });
-    };
-    loadListings();
-  });
+  $(document).on("click", ".fave", addFavorite);
 });
+const addFavorite = function (event) {
+  const id = this.id;
+
+  $.ajax({
+    url: `/api/featuredListings/${id}`,
+    method: "POST",
+    success: (data) => {
+      console.log("faveclick", data);
+    },
+    error: (error) => {
+      console.log("this request failed and this was the error", error);
+    },
+  });
+};

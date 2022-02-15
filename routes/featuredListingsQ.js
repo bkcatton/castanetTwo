@@ -12,12 +12,14 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
-  router.post("/", (req, res) => {
-    console.log("the data coming through", req.body.id, req.session.user_id);
+
+  router.post("/:id", (req, res) => {
+    const id = req.params.id;
+
     db.query(
       `INSERT INTO favorites(id,listing_id,user_id)
     VALUES(nextval('id_sequence'),$1,$2)`,
-      [req.body.id, req.session.user_id]
+      [id, req.session.user_id]
     )
       .then((data) => {
         console.log("added to faves?");
