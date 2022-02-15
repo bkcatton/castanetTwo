@@ -107,11 +107,13 @@ app.get("/single_listing", (req, res) => {
   res.render("single_listing", templateVars);
 });
 
-// app.get("/new", (req, res) => {
-//   const user = req.session.user_id;
-//   console.log("new", user);
-//   res.render("new");
-// });
+app.get("/new", (req, res) => {
+  const user = req.session.user_id;
+  const templateVars = {
+    user
+  };
+  res.render("new", templateVars);
+});
 
 app.get("/favorites", (req, res) => {
   const user = req.session.user_id;
@@ -125,7 +127,6 @@ app.get("/favorites", (req, res) => {
 
 app.get("/myListings", (req, res) => {
   const user = req.session.user_id;
-
   const templateVars = {
     user,
   };

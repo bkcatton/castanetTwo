@@ -23,7 +23,7 @@ $(document).ready(function () {
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">${listing.city}</h3>
   <h3 class="price">$${listing.price}</h3>
-  <button class="fave" id="${listing.id}">fave</button>
+  <button class="fave" id="${listing.id}"> Favorite </button>
 
   </article>`;
 
@@ -79,5 +79,22 @@ $(document).ready(function () {
       });
     };
     loadListings();
+  });
+  const btn = $('#button');
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() < 400) {
+      btn.slideDown();
+    }
+  });
+
+  btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+  });
+
+  $('.logo').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
   });
 });

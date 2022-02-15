@@ -9,17 +9,6 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    // console.log(query);
-    db.query(`SELECT * FROM listings;`)
-      .then((data) => {
-        const templateVars = data.rows;
-        res.render("new", { templateVars });
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
   router.post("/", (req, res) => {
     db.query(
       `INSERT INTO listings (id, title, street_name_number, city, postal_code, sq_ft, seller_id, isActive,

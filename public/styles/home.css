@@ -2,7 +2,8 @@ nav {
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
-  background-color: rgb(146, 250, 193);
+  background-color: #8fffc7;
+  background-image: url("https://www.transparenttextures.com/patterns/retro-intro.png");
   height: 3em;
   padding-left: 2%;
   padding-right: 8%;
@@ -15,6 +16,7 @@ nav {
     1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
   margin-right: 10%;
 }
+
 nav img:hover,
 nav h2:hover {
   cursor: pointer;
@@ -25,24 +27,28 @@ body {
   overflow-x: hidden;
   color: seagreen;
 }
+
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5em;
 }
+
 form {
   margin-top: 5em;
   margin-bottom: 10em;
   display: flex;
   justify-content: center;
 }
+
 .top-row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .bottom-row {
   display: flex;
   flex-direction: row;
@@ -56,37 +62,57 @@ form {
 .hidden {
   display: none;
 }
+
 /* this makes the scroll in the price button go away */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .listing-container {
   border: 2px solid rgb(143, 136, 136);
   border-radius: 5px;
   margin: 3em 3em;
   width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fbfffe;
+  background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");
+  opacity: 70%;
+
 }
+
 .listing-container:hover {
   box-shadow: 10px 5px 5px rgb(145, 136, 136);
 }
+
+#myListings {
+  display: flex;
+  justify-content: center;
+}
+
 .img-pic {
   padding-top: 1em;
   padding-left: 1em;
-  max-width: 15em;
-  /* border-radius: 50% 20%; */
+  max-width: 20em;
+  border-radius: 50% 20%;
 }
+
 .desc {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
+
 .price {
   padding-left: 1em;
 }
+
 .city {
   padding-left: 1em;
 }
+
 .input-city {
   border-radius: 3px;
   margin-right: 0.5em;
@@ -94,18 +120,23 @@ input::-webkit-inner-spin-button {
   padding: 1%;
   border: 1px;
 }
+
 .input-city:focus {
   outline: none;
 }
+
 .input-price:focus {
   outline: none;
 }
+
 .input-city:hover {
   box-shadow: 5px 5px 5px rgb(145, 136, 136);
 }
+
 .input-price:hover {
   box-shadow: 5px 5px 5px rgb(145, 136, 136);
 }
+
 .input-price {
   border-radius: 3px;
   margin-right: 0.5em;
@@ -113,6 +144,7 @@ input::-webkit-inner-spin-button {
   padding: 1%;
   border: 2px;
 }
+
 .search {
   border-radius: 3px;
   border: 1px;
@@ -121,36 +153,250 @@ input::-webkit-inner-spin-button {
   padding-left: 1%;
   padding-right: 1%;
 }
+
 .search:hover {
   box-shadow: 5px 5px 5px rgb(145, 136, 136);
 }
+
 .top-row {
   display: flex;
   flex-direction: row;
 }
-/* .single-listing {
-  margin-left: 1em;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin-bottom: 1em;
-  width: 90vw;
-} */
+
+
 .main-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: rgb(146, 250, 193);
 }
+
 .logged-out {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .logged-off {
   display: inline-flex;
   margin-top: 4em;
 }
+
 .logit {
   color: black;
   text-decoration: none;
+}
+
+/* DELETE BUTTON */
+.button-36 {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: Eina01, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0;
+  min-height: 64px;
+  outline: none;
+  overflow: visible;
+  padding: 19px 26px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 19px 32px;
+  }
+}
+
+.button-36:hover,
+.button-36:active {
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+}
+
+.button-36:before,
+.button-36:after {
+  border-radius: 80px;
+}
+
+.button-36:before {
+  background-color: rgba(255, 0, 0, 0.32);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.button-36:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, #ff0505 0, #f93a13 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.button-36:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+.button-36:active:not(:disabled) {
+  color: #ccc;
+}
+
+.button-36:active:not(:disabled):after {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.button-36:disabled {
+  cursor: default;
+  opacity: .24;
+}
+
+/* Sold button CSS */
+.button-19 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 2px solid black;
+  cursor: pointer;
+  color: rgb(59, 13, 13);
+  position: relative;
+  background-color: rgba(17, 5, 5, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.button-19:hover {
+  color: #000;
+  background-color: #ffe54c;
+}
+
+.button-19:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-19:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-19 {
+    padding: 13px 50px 13px;
+  }
+}
+
+#button {
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  color: whitesmoke;
+  font-family: fantasy;
+  width: 100px;
+  height: 60px;
+  text-align: center;
+  border-radius: 4px;
+  margin: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s;
+  z-index: 1000;
+  border-radius: 30px;
+  display: none;
+}
+
+#button:hover {
+  cursor: pointer;
+  background-color: rgb(147, 221, 255);
+  color: black;
+}
+
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: white;
+}
+
+.fave {
+  border: none;
+  height: 40px;
+  width: 120px;
+  font-size: 15px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fave:active i {
+  animation: item 1s ease-in forwards
+}
+
+.fave:hover {
+  background-color: rgb(243, 243, 138);
+  color: black;
 }

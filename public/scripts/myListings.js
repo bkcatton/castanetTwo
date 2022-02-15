@@ -35,14 +35,16 @@ $(document).ready(function () {
         ? `<img class="img-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>`
         : `<h3>Active</h3>`
     }
-  <h3 class="price">$${listing.price}</h3>
+  <h1 class="price">$${listing.price}</h1>
+  <h2 class="price">${listing.city}</h2>
+  <h3 class="price">${listing.title}</h3>
+  <form id="sold-form" method="POST">
+  <button id="${listing.id}" type="submit" class="button-19">  Mark Sold! </button>
+    </form>
   <form id="button-form" method="POST">
-  <button id="${listing.id}" type="submit"> Delete </button>
+  <button id="${listing.id}" type="submit" class="button-36"> Delete Listing </button>
   </form>
 <br />
-  <form id="sold-form" method="POST">
-  <button id="${listing.id}" type="submit"> Sold! </button>
-    </form>
   </article>`;
 
     return $listingContainer;
