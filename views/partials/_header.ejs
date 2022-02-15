@@ -1,3 +1,5 @@
+<% if(user){%>
+
 <nav>
   <a href="/">
     <img
@@ -15,7 +17,22 @@
     <h2><span class="logout"> My Listings </span></h2>
   </a>
 
+  <a href="/logout">
+    <h2><span class="login"> Logout </span></h2>
+  </a>
+</nav>
+
+<%} else {%>
+<nav>
+  <a href="/">
+    <img
+      src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
+    />
+  </a>
+  <h2><span class=""> Buy </span></h2>
+
   <a href="/login/1">
     <h2><span class="login"> Login </span></h2>
   </a>
 </nav>
+<%}%>

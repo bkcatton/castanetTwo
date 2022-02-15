@@ -65,6 +65,8 @@ const sendTextQuery = require("./routes/sendTextQ");
 
 // login routes
 const loginRoutes = require("./routes/login");
+//logout
+const logoutRoutes = require("./routes/logout");
 
 //new POST query -> post to database from new
 
@@ -80,18 +82,25 @@ app.use("/api/singleListing", singleListing(db));
 app.use("/api/sendText", sendTextQuery(db));
 app.use("/new", newRoutes(db));
 app.use("/", loginRoutes(db));
+app.use("/", logoutRoutes(db));
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
   const user = req.session.user_id;
-  console.log("index", user);
-  res.render("index");
+  const templateVars = {
+    user,
+  };
+
+  res.render("index", templateVars);
 });
 
 app.get("/single_listing", (req, res) => {
   const user = req.session.user_id;
-  console.log("single listing", user);
-  res.render("single_listing");
+  const templateVars = {
+    user,
+  };
+
+  res.render("single_listing", templateVars);
 });
 
 // app.get("/new", (req, res) => {
@@ -102,13 +111,16 @@ app.get("/single_listing", (req, res) => {
 
 app.get("/favorites", (req, res) => {
   const user = req.session.user_id;
-  console.log("favorites", user);
-  res.render("favorites");
+
+  const templateVars = {
+    user,
+  };
+
+  res.render("favorites", templateVars);
 });
 
 app.get("/myListings", (req, res) => {
   const user = req.session.user_id;
-  console.log("user", user);
 
   const templateVars = {
     user,

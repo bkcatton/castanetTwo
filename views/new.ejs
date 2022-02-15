@@ -23,23 +23,7 @@
   </head>
 
   <body>
-    <nav>
-      <a href="/"
-        ><img
-          src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
-      /></a>
-      <h2><span class=""> Buy </span></h2>
-      <a href="/new"
-        ><h2><span class=""> Sell </span></h2></a
-      >
-      <a href="./favorites"
-        ><h2><span class=""> Favourites </span></h2></a
-      >
-      <a href="./myListings"
-        ><h2><span class=""> My Listings </span></h2></a
-      >
-      <h2><span class=""> Login </span></h2>
-    </nav>
+    <%- include('./partials/_header'); %>
     <h1 class="new-form-label">List your property:</h1>
     <section class="add-new-property">
       <form id="new-form" action="/new" method="POST">
@@ -80,14 +64,6 @@
 
     <main></main>
 
-    <footer class="main-footer">
-      <span
-        ><h1>Cast-a-Net <sup>©</sup></h1></span
-      >
-      <img
-        src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
-      />
-      <span class="footer-link"><a href="#top">Back to top</a></span>
-    </footer>
+    <%- include('./partials/_footer'); %>
   </body>
 </html>

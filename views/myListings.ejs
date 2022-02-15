@@ -31,24 +31,7 @@
   </head>
 
   <body>
-    <nav>
-      <a href="/"
-        ><img
-          src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
-      /></a>
-      <a href="./favorites"
-        ><h2><span class=""> Favourites </span></h2></a
-      >
-      <a href="/"
-        ><h2><span class=""> Buy </span></h2></a
-      >
-      <a href="/new"
-        ><h2><span class=""> Sell </span></h2></a
-      >
-      <!-- <h2><span class=""> Register </span></h2> -->
-      <!-- <h2><span class=""> Login </span></h2> -->
-    </nav>
-
+    <%- include('./partials/_header'); %>
     <div>
       <form action="">
         <input type="text" />
@@ -61,14 +44,6 @@
       <div class="bottom-row"></div>
     </main>
 
-    <footer class="main-footer">
-      <span
-        ><h1>Cast-a-Net <sup>©</sup></h1></span
-      >
-      <img
-        src="https://github.com/bkcatton/castanetTwo/blob/master/public/images/logo.png?raw=true"
-      />
-      <span class="footer-link"><a href="#top">Back to top</a></span>
-    </footer>
+    <%- include('./partials/_footer'); %>
   </body>
 </html>
