@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   const $topRow = $(".top-row");
   const $addListing = function (listing) {
-    $(".img-pic").on("click", (e) => {
+    $(".top-row").on("click", (e) => {
       // console.log("this is in the onclick", e.target.id);
       localStorage.setItem("singleListingId", e.target.id);
     });

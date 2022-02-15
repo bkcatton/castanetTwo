@@ -16,7 +16,7 @@ $(document).ready(function () {
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">${listing.city}</h3>
   <h3 class="price">$${listing.price}</h3>
-  <button>unfave</button>
+  <button class="unfave" id="${listing.listing_id}">unfave</button>
   </article>`;
 
     return $listingContainer;
@@ -46,4 +46,30 @@ $(document).ready(function () {
   };
 
   loadListings();
+
+  $(document).on("click", ".unfave", function (event) {
+    localStorage.setItem("fave", event.target.id);
+    console.log("clicked on unfave button", event.target.id);
+    // console.log($(this));
+    event.preventDefault();
+
+    console.log("the target", event.target);
+
+    const loadListings = function () {
+      $.ajax({
+        url: "http://localhost:8080/api/favorites",
+        method: "POST",
+        dataType: "json",
+        data: { id: event.target.id },
+        success: (data) => {
+          console.log("faveclick", data);
+          // renderListing(data.listing);
+        },
+        error: (error) => {
+          console.log("this request failed and this was the error", error);
+        },
+      });
+    };
+    loadListings();
+  });
 });
