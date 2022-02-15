@@ -81,5 +81,6 @@ $(document).ready(function () {
         console.log("this request failed and this was the error", error);
       },
     });
+    $textMessage.trigger("reset");
   });
 });
