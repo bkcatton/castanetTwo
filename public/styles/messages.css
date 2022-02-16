@@ -22,19 +22,67 @@ div > h4 {
   justify-content: center;
 }
 .conversations{
+  border: solid 1px #EEE;
   display: flex;
   flex-direction: column;
-  margin: 100px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
-.bubble-message-right {
+.chat {
+  width: 300px;
+  border: solid 1px #EEE;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.yours {
   align-items: flex-start;
 }
-.bubble-message-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+
+.yours .message {
+  margin-right: 25%;
+  background-color: #eee;
+  position: relative;
+}
+
+.mine {
   align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+.messager {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end ;
+  margin: 10px;
+}
+#deliver-reply {
+  border-radius: 10px;
+}
+#reply-body {
+  width: 12em;
+  border-radius: 10px;
 }

@@ -64,21 +64,19 @@ $(document).ready(function () {
     });
   }
 
-  const renderThreadLeft = function (message) {
+  const renderYourMessage = function (message) {
     const $distinctMessageLeft = `
-    <div class="bubble-message-left">
-    From : ${message.sender_id} To: ${message.receiver_id}
-    <div class="bubble-body">
+    <div class="yours message">
+    <div class="message">
     ${message.message_body}
     </div>
   </div>`;
     $threadsContainer.append($distinctMessageLeft);
   }
-  const renderThreadRight = function (message) {
+  const renderMyMessage = function (message) {
     const $distinctMessageRight = `
-    <div class="bubble-message-right">
-    From : ${message.sender_id} To: ${message.receiver_id}
-    <div class="bubble-body">
+    <div class="mine messages">
+    <div class="message">
     ${message.message_body}
     </div>
   </div>`;
@@ -90,18 +88,16 @@ $(document).ready(function () {
     $threadsContainer.append($threadHeader);
     for (let message of messages) {
       if (message.receiver_id === 3) {
-        renderThreadRight(message);
+        renderYourMessage(message);
       } else {
-        renderThreadLeft(message);
+        renderMyMessage(message);
       }
     }
     $threadsContainer.append($singleConvFooter);
-    $messagerContainer.append(`<h4>Reply:
-    </h4>
+    $messagerContainer.append(`
     <form id="${messages[0].sender_id}">
       <textarea type="text" id="reply-body" placeholder="Your Message Here"></textarea>
-      <button id="deliver-reply">send message</button>
-    </form>`);
+      <button id="deliver-reply">send message</button>`);
     $messagerContainer.attr('id', `${messages[0].sender_id}`);
     $backToMessagesContainer.append(`<button>Back to Messages</button>`);
   }
