@@ -4,10 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto+Slab&family=Source+Sans+Pro:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- css -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+
+    <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="/styles/newlisting.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/listings.css" type="text/css" />
@@ -20,47 +31,54 @@
 
     <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
     <!-- <link rel="stylesheet" href="../public/styles/home.css" type="text/css" /> -->
-    <title>Header</title>
+    <title>Castanet 2</title>
   </head>
 
   <body>
     <%- include('./partials/_header'); %>
-    <h1 class="new-form-label">List your property:</h1>
+    <h1 class="new-form-header">Sell your Home:</h1>
     <section class="add-new-property">
-      <form id="new-form" action="/new" method="POST">
-        <div>
-          <input placeholder="List Price" type="text" name="price" />
-          <input placeholder="Address" type="text" name="address" />
-        </div>
-        <div>
-          <input placeholder="City" type="text" name="city" />
-          <input placeholder="Postal Code" type="text" name="postcode" />
-        </div>
-        <div>
-          <input placeholder="Square ft" type="text" name="sqft" />
+      <div class="outside">
+        <form id="new-form" action="/new" method="POST">
+          <div>
+            <input
+              class="sell-price"
+              placeholder="List Price"
+              type="text"
+              name="price"
+            />
+            <input placeholder="Address" type="text" name="address" />
+          </div>
+          <div>
+            <input placeholder="City" type="text" name="city" />
+            <input placeholder="Postal Code" type="text" name="postcode" />
+          </div>
+          <div>
+            <input placeholder="Square ft" type="text" name="sqft" />
 
-          <input placeholder="Type" type="text" name="type" />
-        </div>
-        <div>
-          <input placeholder="Bedrooms" type="text" name="bedrooms" />
-          <input placeholder="Bathrooms" type="text" name="bathrooms" />
-        </div>
-        <div>
-          <input placeholder="Parking Spaces" type="text" name="parking" />
-          <input placeholder="Photo URL" type="text" name="photo_url" />
-        </div>
-        <div>
-          <textarea
-            class="desc-text"
-            name="title"
-            placeholder="Property description"
-            cols="30"
-            rows="10"
-          ></textarea>
-          <!-- <input placeholder="Description" type="text" name="title" /> -->
-          <button type="submit" id="new-listing-button">Add Listing</button>
-        </div>
-      </form>
+            <input placeholder="Type" type="text" name="type" />
+          </div>
+          <div>
+            <input placeholder="Bedrooms" type="text" name="bedrooms" />
+            <input placeholder="Bathrooms" type="text" name="bathrooms" />
+          </div>
+          <div>
+            <input placeholder="Parking Spaces" type="text" name="parking" />
+            <input placeholder="Photo URL" type="text" name="photo_url" />
+          </div>
+          <div>
+            <textarea
+              class="desc-text"
+              name="title"
+              placeholder="Property description"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <!-- <input placeholder="Description" type="text" name="title" /> -->
+            <button type="submit" id="new-listing-button">Add Listing</button>
+          </div>
+        </form>
+      </div>
     </section>
 
     <main></main>

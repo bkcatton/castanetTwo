@@ -1,7 +1,12 @@
+body {
+  /* background-color: rgb(224, 218, 218); */
+  background-image: url("../images/jason-briscoe-UV81E0oXXWQ-unsplash.jpeg");
+}
+
 .add-new-property {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   margin-left: 3em;
   flex-wrap: wrap;
 }
@@ -12,16 +17,17 @@
   justify-content: center;
 }
 
-.new-form-label {
+.new-form-header {
   display: flex;
   justify-content: center;
   margin-top: 10%;
+  font-size: 4em;
 }
 
 .add-new-property input {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 10%;
-  width: 90%;
+  /* width: 75%; */
   height: 20%;
   text-overflow: wrap;
   display: flex;
@@ -32,30 +38,68 @@
 #new-listing-button {
   color: whitesmoke;
   background-color: black;
-  width: 80%;
-  height: 30%;
+  width: 50%;
+  height: 20%;
   border-radius: 0.25em;
   border: none;
+  margin-top: 2em;
+  align-self: center;
+}
+#new-listing-button:hover {
+  box-shadow: 5px 5px 5px rgb(145, 136, 136);
 }
 
 input {
   border-radius: 0.25em;
-  border: 0.5px solid black;
+  border: 0.5px;
+  width: 75%;
+  align-self: center;
+  /* text-align: start; */
 }
 input:focus {
   outline: none;
+}
+input:hover {
+  box-shadow: 5px 5px 5px rgb(145, 136, 136);
 }
 #new-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
+
+/* sell description text area */
+
 .desc-text {
-  border: 1px solid black;
+  border: 1px;
   resize: none;
   border-radius: 5px;
   margin-bottom: 1em;
+  width: 75%;
+  align-self: center;
 }
 .desc-text:focus {
   outline: none;
 }
+.desc-text:hover {
+  box-shadow: 5px 5px 5px rgb(145, 136, 136);
+}
+.outside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(155, 151, 151, 0.431);
+  margin-bottom: 10em;
+  margin-top: 5em;
+  width: 30%;
+
+  border-radius: 10px;
+}
+
+/* sell price input */
+
+/*
+    background-color: #dad0d100;
+    background-image: url(https://www.transparenttextures.com/patterns/retro-intro.png);
+
+*/
