@@ -222,7 +222,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e5fced;
+  background-color: #bfc1c0ba;
   /* background-image: url("https://www.transparenttextures.com/patterns/sprinkles.png");
   opacity: 70%; */
 }
@@ -237,25 +237,22 @@ input::-webkit-inner-spin-button {
   box-shadow: 10px 5px 5px rgb(145, 136, 136);
 }
 
-.city {
-  margin-right: 35em;
-}
-
 .price {
-  color: rgb(2, 182, 74);
-  margin-left: 35em;
   font-size: 20px;
 }
 
 #myListings {
   display: flex;
   justify-content: center;
+  font-size: 4em;
 }
 
 .img-pic {
-  max-width: 30em;
+  width: 480px;
+  height: 320px;
   border-radius: 0.5em;
   margin-top: 1em;
+  border: 3px solid #80808047;
 }
 
 .sold-pic {
@@ -263,17 +260,20 @@ input::-webkit-inner-spin-button {
 }
 
 .desc {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  width: 90%;
 }
 
-.price {
+/* .price {
   padding-left: 1em;
-}
+} */
 
-.city {
+/* .city {
   padding-left: 1em;
-}
+} */
 
 .input-city {
   border-radius: 3px;
@@ -577,8 +577,9 @@ input::-webkit-inner-spin-button {
 }
 
 .fave:hover {
-  background-color: rgb(243, 243, 138);
-  color: black;
+  background-color: rgb(49, 207, 44);
+  color: rgb(250, 246, 246);
+  border: 2px solid black;
 }
 
 .animate.pop {
@@ -605,4 +606,16 @@ input::-webkit-inner-spin-button {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-size: 1.2em;
+}
+
+.index-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 97%;
+}
+
+.faves-header {
+  text-align: center;
+  font-size: 4em;
 }
