@@ -53,7 +53,7 @@ const $createFavorite = function (listing) {
 <h3 class="city">${listing.city}</h3>
 <h3 class="price">$${listing.price}</h3>
 
-<button class="fave" id="${listing.fid}">Unfavorite</button>
+<button class="fave unfave" id="${listing.fid}">Unfavorite</button>
 
 </article>`;
 
