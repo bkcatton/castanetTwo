@@ -3,14 +3,15 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh; */
-  background: #a3d0db;
+  /* background: #a3d0db;
   background: linear-gradient(227deg,
       #a3d0db 0%,
       #a3b0db 20%,
       #a3addb 34%,
       #a3dbd0 59%,
       #a3d0db 74%,
-      #a3d0db 100%);
+      #a3d0db 100%); */
+  background-image: url("../images/jason-briscoe-UV81E0oXXWQ-unsplash.jpeg");
 }
 
 .title-word {
@@ -18,56 +19,56 @@ body {
 }
 
 .title-word-1 {
-  --color-1: #DF8453;
+  --color-1: #df8453;
   --color-2: #ce429f;
-  --color-3: #E4A9A8;
+  --color-3: #e4a9a8;
 }
 
 .title-word-2 {
-  --color-1: #DBAD4A;
+  --color-1: #dbad4a;
   --color-2: #5fe98d;
-  --color-3: #17494D;
+  --color-3: #17494d;
 }
 
 .title-word-3 {
   --color-1: #fdfb82;
-  --color-2: #E4A9A8;
+  --color-2: #e4a9a8;
   --color-3: #ffd57c;
 }
 
 .title-word-4 {
   --color-1: #7aff90;
-  --color-2: #DF8453;
-  --color-3: #E4A9A8;
+  --color-2: #df8453;
+  --color-3: #e4a9a8;
 }
 
 @keyframes color-animation {
   0% {
-    color: var(--color-1)
+    color: var(--color-1);
   }
 
   32% {
-    color: var(--color-1)
+    color: var(--color-1);
   }
 
   33% {
-    color: var(--color-2)
+    color: var(--color-2);
   }
 
   65% {
-    color: var(--color-2)
+    color: var(--color-2);
   }
 
   66% {
-    color: var(--color-3)
+    color: var(--color-3);
   }
 
   99% {
-    color: var(--color-3)
+    color: var(--color-3);
   }
 
   100% {
-    color: var(--color-1)
+    color: var(--color-1);
   }
 }
 
@@ -77,7 +78,7 @@ body {
   display: grid;
   place-items: center;
   text-align: center;
-  height: 30vh
+  height: 30vh;
 }
 
 .title {
