@@ -49,7 +49,7 @@ footer img:hover {
 }
 
 /* CSS */
-#back-button {
+.back-button {
   appearance: button;
   background-color: #1899D6;
   border: solid transparent;
@@ -77,11 +77,10 @@ footer img:hover {
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 100%;
   margin-top: 2em;
 }
 
-#back-button:after {
+.back-button:after {
   background-clip: padding-box;
   background-color: #1CB0F6;
   border: solid transparent;
@@ -96,16 +95,16 @@ footer img:hover {
   z-index: -1;
 }
 
-#back-button:main,
-#back-button:focus {
+.back-button:main,
+.back-button:focus {
   user-select: auto;
 }
 
-#back-button:hover:not(:disabled) {
+.back-button:hover:not(:disabled) {
   filter: brightness(1.1);
 }
 
-back-button:disabled {
+.back-button:disabled {
   cursor: auto;
 }
 
@@ -179,7 +178,7 @@ body {
 
 form {
   margin-top: 5em;
-  margin-bottom: 10em;
+  margin-bottom: 5em;
   display: flex;
   justify-content: center;
 }
