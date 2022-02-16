@@ -38,9 +38,9 @@ $(document).ready(function () {
         : `<h3>Active</h3>`
     }
     </div>
-    <h3 class="desc">${listing.title}</h3>
-    <h3 class="city">City:${listing.city}</h3>
     <h3 class="price">Asking Price: $${listing.price}</h3>
+    <h3 class="desc">${listing.title}</h3>
+    <h3>City:${listing.city}</h3>
     <h3>Address:${listing.street_name_number}</h3>
     <h3>Postal Code:${listing.postal_code}</h3>
     <h3>Square Footage: ${listing.sq_ft} square feet</h3>
