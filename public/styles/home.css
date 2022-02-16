@@ -30,6 +30,7 @@ nav {
     1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
   margin-right: 10%;
 }
+
 nav img {
   border-radius: 10em;
   max-width: 9em;
@@ -59,7 +60,7 @@ footer img:hover {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: din-round,sans-serif;
+  font-family: din-round, sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: .8px;
@@ -120,7 +121,7 @@ footer img:hover {
 }
 
 .sell:hover {
-  color:antiquewhite;
+  color: antiquewhite;
 }
 
 .favorites {
@@ -131,7 +132,7 @@ footer img:hover {
 }
 
 .favorites:hover {
-  color:antiquewhite;
+  color: antiquewhite;
 }
 
 .logout {
@@ -142,7 +143,7 @@ footer img:hover {
 }
 
 .logout:hover {
-  color:antiquewhite;
+  color: antiquewhite;
 }
 
 .login {
@@ -153,7 +154,7 @@ footer img:hover {
 }
 
 .login:hover {
-  color:antiquewhite;
+  color: antiquewhite;
 }
 
 nav img:hover,
@@ -177,7 +178,7 @@ body {
 }
 
 form {
-  margin-top: 5em;
+  margin-top: 2em;
   margin-bottom: 5em;
   display: flex;
   justify-content: center;
@@ -225,7 +226,9 @@ input::-webkit-inner-spin-button {
 }
 
 .button-div {
-  display:flex;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
 }
 
 .listing-container:hover {
@@ -237,8 +240,9 @@ input::-webkit-inner-spin-button {
 }
 
 .price {
-  color:rgb(2, 182, 74);
+  color: rgb(2, 182, 74);
   margin-left: 35em;
+  font-size: 20px;
 }
 
 #myListings {
@@ -252,6 +256,7 @@ input::-webkit-inner-spin-button {
   max-width: 30em;
   border-radius: 50% 20%;
 }
+
 .sold-pic {
   max-width: 15em;
 }
@@ -325,6 +330,13 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
   justify-content: space-around;
   background-color: rgb(146, 250, 193);
+}
+
+.main-footer span {
+  margin-top: 3em;
+  font-family: din-round, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .logged-out {
@@ -454,8 +466,9 @@ input::-webkit-inner-spin-button {
 
 /* Sold button CSS */
 .button-19 {
-  font-size: 16px;
-  font-weight: 400;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
   letter-spacing: 1px;
   padding: 13px 20px 13px;
   outline: 0;
@@ -538,7 +551,7 @@ input::-webkit-inner-spin-button {
   height: 40px;
   width: 180px;
   font-size: 15px;
-  background-color: #000;
+  background-color: #1899D6;
   color: #fff;
   border-radius: 20px;
   cursor: pointer;
@@ -578,6 +591,11 @@ input::-webkit-inner-spin-button {
     transform: scale(1, 1);
   }
 }
-
-
-
+.date-time {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 1.2em;
+}
