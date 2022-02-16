@@ -74,7 +74,7 @@ $(document).ready(function () {
     console.log($currentListing);
 
     $.ajax({
-      url: "http://localhost:8080/api/sendText",
+      url: "http://localhost:8080/api/sendTextFromListings",
       method: "GET",
       dataType: "json",
       data: {
