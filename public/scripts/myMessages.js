@@ -97,9 +97,7 @@ $(document).ready(function () {
 
   //when clicked this will empty page and render the clicked message thread
   $(".all-conversations").on("click", (e) => {
-    console.log("this is in the onclick", e.target.id);
     localStorage.setItem("singleListingId", e.target.id);
-    console.log("this is in local storage now:", localStorage.singleListingId);
     $conversationsContainer.empty();
 
     $.ajax({
@@ -108,7 +106,6 @@ $(document).ready(function () {
       dataType: "json",
       data: { id: e.target.id || localStorage.singleListingId },
       success: (data) => {
-        console.log("from our new data obj", data);
         renderThreads(data.data);
       },
       error: (error) => {
