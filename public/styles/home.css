@@ -48,11 +48,80 @@ footer img:hover {
   box-shadow: 10px 5px 5px rgb(145, 136, 136);
 }
 
+/* CSS */
+#back-button {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 40px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 2em;
+}
+
+#back-button:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#back-button:main,
+#back-button:focus {
+  user-select: auto;
+}
+
+#back-button:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+back-button:disabled {
+  cursor: auto;
+}
+
+.sold-pic {
+  max-width: 10em;
+}
+
 .sell {
   color: black;
   text-decoration: none;
   text-shadow: none;
   font-weight: none;
+}
+
+.sell:hover {
+  color:antiquewhite;
 }
 
 .favorites {
@@ -62,11 +131,19 @@ footer img:hover {
   font-weight: none;
 }
 
+.favorites:hover {
+  color:antiquewhite;
+}
+
 .logout {
   color: black;
   text-decoration: none;
   text-shadow: none;
   font-weight: none;
+}
+
+.logout:hover {
+  color:antiquewhite;
 }
 
 .login {
@@ -76,9 +153,14 @@ footer img:hover {
   font-weight: none;
 }
 
+.login:hover {
+  color:antiquewhite;
+}
+
 nav img:hover,
 nav h2:hover {
   cursor: pointer;
+  color: antiquewhite;
 }
 
 body {
@@ -233,7 +315,7 @@ input::-webkit-inner-spin-button {
 .main-footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: rgb(146, 250, 193);
 }
 
@@ -456,6 +538,7 @@ input::-webkit-inner-spin-button {
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2em;
 }
 
 .fave:active i {
