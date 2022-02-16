@@ -12,6 +12,7 @@ $(document).ready(function () {
     });
     // console.log(listing);
     const $listingContainer = `<article class= "listing-container">
+    <div>
     <a name="imagelink" class="" href="/single_listing"><img class="img-pic" src='${
       listing.photo_url
     }' id='${listing.id}'/></a>
@@ -20,6 +21,7 @@ $(document).ready(function () {
         ? `<img class="sold-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>`
         : `<h3>Active</h3>`
     }
+    </div>
   <h3 class="desc">${listing.title}</h3>
   <h3 class="city">City: ${listing.city}</h3>
   <h3 class="price">Price: $${listing.price}</h3>

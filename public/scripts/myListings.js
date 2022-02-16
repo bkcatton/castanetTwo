@@ -27,6 +27,7 @@ $(document).ready(function () {
     });
     // console.log("kjhfgkjhdfsgkjhdfsgkj", listing);
     const $listingContainer = `<article class="listing-container">
+    <div>
     <a name="imagelink" class="" href="/single_listing"><img class="img-pic" src='${
       listing.photo_url
     }' id='${listing.id}'/></a>
@@ -35,6 +36,7 @@ $(document).ready(function () {
         ? `<img class="sold-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>`
         : `<h3>Active</h3>`
     }
+    </div>
     <h3 class="desc">${listing.title}</h3>
     <h3 class="city">City:${listing.city}</h3>
     <h3 class="price">Asking Price: $${listing.price}</h3>
@@ -45,13 +47,14 @@ $(document).ready(function () {
     <h3>Number of Bedrooms: ${listing.bedroom_number}</h3>
     <h3>Number of Bathrooms: ${listing.bathroom_number}</h3>
     <h3>Number of Parking Spaces:${listing.parking_spaces}</h3>
+    <div class='button-div'>
   <form id="sold-form" method="POST">
   <button id="${listing.id}" type="submit" class="button-19">  Mark Sold! </button>
     </form>
   <form id="button-form" method="POST">
   <button id="${listing.id}" type="submit" class="button-36"> Delete Listing </button>
   </form>
-<br />
+    </div>
   </article>`;
 
     return $listingContainer;
