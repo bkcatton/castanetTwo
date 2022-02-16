@@ -9,7 +9,7 @@ module.exports = (db) => {
     const messageBody = req.query.message;
     const buyerNumber = req.query.buyer_number;
     const currentListing = req.query.currentListing;
-
+    console.log("from the backend query", currentListing);
 
     sendText("+12506811829", `${messageBody}`);
     console.log(
@@ -35,32 +35,19 @@ module.exports = (db) => {
     //     res.status(500).json({ error: err.message });
     //   });
 
-    //from the message center:
-    const messageReceiver= req.query.receiver_id;
-
     db.query(
       `INSERT INTO messages (id, message_body,receiver_id, sender_id)
-      VALUES (nextval('id_sequence'), $1, $2, 3) RETURNING *;`,
-      [messageBody, messageReceiver]
+      VALUES (nextval('id_sequence'), $1, 3, 10) RETURNING *;`,
+      [messageBody]
     )
       .then((data) => {
+        console.log("the data it should be", data.rows);
+
         console.log("added  to msgs");
-        db.query(
-          `select * from messages where (sender_id = $1 AND receiver_id = 3) OR (sender_id = 3 AND receiver_id = $1);`,[messageReceiver]
-        )
-          .then((data) => {
-            res.json({ data: data.rows });
-          })
-          .catch((err) => {
-            res.status(500).json({ error: err.message });
-          });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
       });
-
-
-
   });
   return router;
 };

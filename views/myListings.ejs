@@ -7,7 +7,7 @@
     <!-- css -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="/styles/main.css" type="text/css" /> -->
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/home.css" type="text/css" />
 
@@ -33,7 +33,14 @@
 
   <body>
     <%- include('./partials/_header'); %>
-    <h1 class="home">Search for your new home</h1>
+    <div class="container">
+      <h2 class="title">
+        <span class="title-word title-word-1">Search for</span>
+        <span class="title-word title-word-2">your</span>
+        <span class="title-word title-word-3">new</span>
+        <span class="title-word title-word-4">home</span>
+      </h2>
+    </div>
     <div>
       <form class="main-search" action="/" method="GET">
         <input type="text" placeholder="Search by city" class="input-city" />
