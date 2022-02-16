@@ -18,6 +18,7 @@ $(document).ready(function () {
       contentType: type,
     });
   };
+
   const $addListing = function (listing) {
     localStorage.clear();
 
@@ -35,17 +36,21 @@ $(document).ready(function () {
         ? `<img class="img-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>`
         : `<h3>Active</h3>`
     }
-  <h1 class="price">$${listing.price}</h1>
-  <h2 class="price">${listing.city}</h2>
-  <h3 class="price">${listing.title}</h3>
-  <form id="sold-form" method="POST">
-  <button id="${listing.id}" type="submit" class="button-19">  Mark Sold! </button>
+    <h1 class="price">$${listing.price}</h1>
+    <h2 class="price">${listing.city}</h2>
+    <h3 class="price">${listing.title}</h3>
+    <form id="sold-form" method="POST">
+    <button id="${
+      listing.id
+    }" type="submit" class="button-19">  Mark Sold! </button>
     </form>
-  <form id="button-form" method="POST">
-  <button id="${listing.id}" type="submit" class="button-36"> Delete Listing </button>
-  </form>
-<br />
-  </article>`;
+    <form id="button-form" method="POST">
+    <button id="${
+      listing.id
+    }" type="submit" class="button-36"> Delete Listing </button>
+    </form>
+    <br />
+    </article>`;
 
     return $listingContainer;
   };
@@ -56,7 +61,7 @@ $(document).ready(function () {
     container.empty();
     for (let listing of array) {
       const $item = $addListing(listing);
-      container.append($item);
+      container.prepend($item);
     }
   };
   const loadListings = function () {
@@ -93,6 +98,7 @@ $(document).ready(function () {
 
     $.post(`/api/myListings/${id}`).then((data) => {
       console.log(data);
+      loadListings();
     });
     // $.post({
     //   url: "/api/myListings",

@@ -19,7 +19,7 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
-  router.delete("/:id", (req, res) => {
+  router.post("/:id", (req, res) => {
     const id = req.params.id;
     console.log("the data coming through", id);
 

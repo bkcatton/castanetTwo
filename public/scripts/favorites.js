@@ -1,34 +1,47 @@
 // Client facing scripts here
 $(document).ready(function () {
+  // loads the users favorites
+
   loadFavorites();
+
+  // sets an event to remove a listing from a users favorites
 
   $(document).on("click", ".unfave", unFavorite);
 });
+
+// removes a listing from  users favorites
 
 const unFavorite = function (event) {
   const id = this.id;
 
   console.log("button clicked unfave", id);
-
-  $.ajax({
-    url: `/api/favorites/${id}`,
-    method: "DELETE",
-    success: (data) => {
-      console.log("unfaveclick", data);
-
-      loadFavorites();
-    },
-    error: (error) => {
-      console.log("this request failed and this was the error", error);
-    },
+  $.post(`/api/favorites/${id}`).then((data) => {
+    loadFavorites(data);
   });
+
+  // $.ajax({
+  //   url: `/api/favorites/${id}`,
+  //   method: "DELETE",
+  //   success: (data) => {
+  //     console.log("unfaveclick", data);
+
+  //     loadFavorites();
+  //   },
+  //   error: (error) => {
+  //     console.log("this request failed and this was the error", error);
+  //   },
+  // });
 };
+
+// loads the users favorites to the ejs
 
 const loadFavorites = function () {
   $.get("/api/favorites").then((data) => {
     renderFavorites(data);
   });
 };
+
+// creates an html element for the favorites page
 
 const $createFavorite = function (listing) {
   localStorage.clear();
@@ -59,6 +72,9 @@ const $createFavorite = function (listing) {
 
   return $listingContainer;
 };
+
+// // appends the result of create favorites to the ejs
+
 const renderFavorites = function (listings) {
   const array = listings.favorites;
   const $container = $(".top-row");
