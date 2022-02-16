@@ -60,8 +60,10 @@ const featuredListings = require("./routes/featuredListingsQ");
 //single listing query -> render on single_listing
 const singleListing = require("./routes/singleListingQ");
 
-//send text query
+//send text query FROM your messages page
 const sendTextQuery = require("./routes/sendTextQ");
+//send text query FROM your single listings page
+const sendTextFromListingsQuery = require("./routes/sendTextFromListingsQ");
 //receive text query
 const receiveTextQuery = require("./routes/receiveTextQ");
 //all messages query -> render on myMessages
@@ -86,6 +88,7 @@ app.use("/api/featuredListings", featuredListings(db));
 app.use("/api/listingSearch", listingSearch(db));
 app.use("/api/singleListing", singleListing(db));
 app.use("/api/sendText", sendTextQuery(db));
+app.use("/api/sendTextFromListings", sendTextFromListingsQuery(db));
 app.use("/api/receiveText", receiveTextQuery(db));
 app.use("/api/myMessages", myMessages(db)); //gets all distinct conversations
 app.use("/api/oneConversation", oneConversation(db)); //gets all messages from one conversation

@@ -51,7 +51,7 @@ $(document).ready(function () {
       url: "http://localhost:8080/api/oneConversation",
       method: "GET",
       dataType: "json",
-      data: { id: localStorage.singleListingId},
+      data: { id: localStorage.singleListingId },
       success: (data) => {
         console.log("from our new data obj", data);
         renderThreads(data.data);
@@ -68,7 +68,7 @@ $(document).ready(function () {
     <th>${message.message_body}</th>
     <th>${message.receiver_id}</th>
   </tr>`;
-  $threadsContainer.append($distinctMessage);
+    $threadsContainer.append($distinctMessage);
   }
 
   const renderThreads = function (messages) {
@@ -106,7 +106,7 @@ $(document).ready(function () {
       url: "http://localhost:8080/api/oneConversation",
       method: "GET",
       dataType: "json",
-      data: { id: e.target.id || localStorage.singleListingId},
+      data: { id: e.target.id || localStorage.singleListingId },
       success: (data) => {
         console.log("from our new data obj", data);
         renderThreads(data.data);
@@ -136,7 +136,10 @@ $(document).ready(function () {
         sender_id: 3,
       },
       success: (data) => {
-        console.log("from our new data obj and button", data);
+        $threadsContainer.empty();
+        $messagerContainer.empty();
+        $backToMessagesContainer.empty();
+        renderThreads(data.data);
       },
       error: (error) => {
         console.log("this request failed and this was the error", error);
