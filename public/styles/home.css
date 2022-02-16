@@ -9,15 +9,17 @@
 
 ::-webkit-scrollbar-thumb:vertical {
   height: 60px;
-  background-color: #0A4C95;
+  background-color: #0a4c95;
 }
 
 nav {
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
-  background-color: #8fffc7;
-  background-image: url("https://www.transparenttextures.com/patterns/retro-intro.png");
+  /* background-color: #8fffc7;
+  background-image: url("https://www.transparenttextures.com/patterns/retro-intro.png"); */
+  background-color: #dad0d100;
+  background-image: url(https://www.transparenttextures.com/patterns/retro-intro.png);
   height: 3em;
   padding-left: 2%;
   padding-right: 8%;
@@ -52,18 +54,18 @@ footer img:hover {
 /* CSS */
 .back-button {
   appearance: button;
-  background-color: #1899D6;
+  background-color: #1899d6;
   border: solid transparent;
   border-radius: 40px;
   border-width: 0 0 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
   font-family: din-round, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
   line-height: 20px;
   margin: 0;
   outline: none;
@@ -73,7 +75,7 @@ footer img:hover {
   text-transform: uppercase;
   touch-action: manipulation;
   transform: translateZ(0);
-  transition: filter .2s;
+  transition: filter 0.2s;
   user-select: none;
   -webkit-user-select: none;
   vertical-align: middle;
@@ -83,7 +85,7 @@ footer img:hover {
 
 .back-button:after {
   background-clip: padding-box;
-  background-color: #1CB0F6;
+  background-color: #1cb0f6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -167,7 +169,7 @@ body {
   background-color: rgb(243, 235, 235);
   overflow-x: hidden;
   color: rgb(9, 14, 11);
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .home {
@@ -221,8 +223,8 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   align-items: center;
   background-color: #e5fced;
-  background-image: url("https://www.transparenttextures.com/patterns/sprinkles.png");
-  opacity: 70%;
+  /* background-image: url("https://www.transparenttextures.com/patterns/sprinkles.png");
+  opacity: 70%; */
 }
 
 .button-div {
@@ -324,12 +326,13 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
 }
 
-
 .main-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: rgb(146, 250, 193);
+  /* background-color: rgb(146, 250, 193); */
+  background-color: #dad0d100;
+  background-image: url(https://www.transparenttextures.com/patterns/retro-intro.png);
 }
 
 .main-footer span {
@@ -452,7 +455,12 @@ input::-webkit-inner-spin-button {
 }
 
 .button-36:active:not(:disabled):after {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
   bottom: 4px;
   left: 4px;
   right: 4px;
@@ -461,7 +469,7 @@ input::-webkit-inner-spin-button {
 
 .button-36:disabled {
   cursor: default;
-  opacity: .24;
+  opacity: 0.24;
 }
 
 /* Sold button CSS */
@@ -524,7 +532,7 @@ input::-webkit-inner-spin-button {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
   z-index: 1000;
   border-radius: 30px;
   display: none;
@@ -551,7 +559,7 @@ input::-webkit-inner-spin-button {
   height: 40px;
   width: 180px;
   font-size: 15px;
-  background-color: #1899D6;
+  background-color: #1899d6;
   color: #fff;
   border-radius: 20px;
   cursor: pointer;
@@ -566,7 +574,7 @@ input::-webkit-inner-spin-button {
 }
 
 .fave:active i {
-  animation: item 1s ease-in forwards
+  animation: item 1s ease-in forwards;
 }
 
 .fave:hover {
@@ -577,7 +585,7 @@ input::-webkit-inner-spin-button {
 .animate.pop {
   animation-duration: 0.5s;
   animation-name: animate-pop;
-  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
 }
 
 @keyframes animate-pop {
