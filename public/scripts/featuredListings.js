@@ -59,6 +59,9 @@ $(document).ready(function () {
 });
 const addFavorite = function (event) {
   const id = this.id;
+  this.style.backgroundColor = 'rgb(243, 243, 138)';
+  this.style.color = 'black';
+  this.innerHTML = "Added to favorites";
 
   $.ajax({
     url: `/api/featuredListings/${id}`,
