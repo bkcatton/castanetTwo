@@ -30,6 +30,23 @@ nav {
     1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
   margin-right: 10%;
 }
+nav img {
+  border-radius: 10em;
+  max-width: 9em;
+}
+
+nav img:hover {
+  box-shadow: 10px 5px 5px rgb(145, 136, 136);
+}
+
+footer img {
+  border-radius: 10em;
+  max-width: 9em;
+}
+
+footer img:hover {
+  box-shadow: 10px 5px 5px rgb(145, 136, 136);
+}
 
 .sell {
   color: black;
@@ -467,3 +484,6 @@ input::-webkit-inner-spin-button {
     transform: scale(1, 1);
   }
 }
+
+
+
