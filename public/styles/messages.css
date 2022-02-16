@@ -1,0 +1,23 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+table {
+  display: flex;
+  justify-content: center;
+}
+.headers {
+display: flex;
+justify-content: space-around;
+border: 2px solid black;
+width: 75%;
+}
+table {
+  width: 10em;
+}
+
+th, tr {
+  border: 2px solid black;
+  min-width: 4em;
+}
+
