@@ -33,7 +33,7 @@ $(document).ready(function () {
   <h3>Number of Bedrooms: ${listing.bedroom_number}</h3>
   <h3>Number of Bathrooms: ${listing.bathroom_number}</h3>
   <h3>Number of Parking Spaces:${listing.parking_spaces}</h3>
-  <button class="fave" id="${listing.id}">fave</button>
+  <button class="fave" id="${listing.id}">Favorite</button>
 
   </article>`;
     return $listingContainer;
@@ -98,6 +98,9 @@ $(document).ready(function () {
 
 const addFavorite = function (event) {
   const id = this.id;
+  this.style.backgroundColor = 'rgb(243, 243, 138)';
+  this.style.color = 'black';
+  this.innerHTML = "Added to favorites";
 
   $.ajax({
     url: `/api/featuredListings/${id}`,
