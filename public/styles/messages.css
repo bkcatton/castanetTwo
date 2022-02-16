@@ -1,23 +1,40 @@
-h1 {
+.all-conversations {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
-table {
+.thread-box {
   display: flex;
-  justify-content: center;
-}
-.headers {
-display: flex;
-justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
 border: 2px solid black;
+border-radius: 5px;
 width: 75%;
-}
-table {
-  width: 10em;
-}
-
-th, tr {
-  border: 2px solid black;
-  min-width: 4em;
+margin: 10px;
+padding: 5px;
 }
 
+div > h4 {
+  display: flex;
+  justify-content: center;
+}
+.conversations{
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+}
+.bubble-message-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.bubble-message-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}

@@ -2,21 +2,23 @@
 $(document).ready(function () {
   const $conversationsContainer = $('.all-conversations');
   const $threadsContainer = $('.conversations');
-  const $singleConvHeader = `<h1>Messages - click to view conversations</h1>
-          <div class="headers">
-          <div>From User Id</div>
-          <div>Message Thread</div>
-          </div>`;
+  const $singleConvHeader = `<h1>Messages - click to view conversations</h1>`;
   const $singleConvFooter = `</table>`;
   const $messagerContainer = $('.messager');
   const $backToMessagesContainer = $('.back-to-messages');
 
   const renderSingleConversation = function (message) {
-    const $distinctMessage = `<tr>
-            <th><a > ${message.sender_id}</a></th>
-            <th>${message.message_body}</th>
-            <th><button class="view-thread" id="${message.sender_id}">View Thread</button></th>
-          </tr>`
+    const $distinctMessage = `
+            <div class="thread-box">
+            <div>
+            <strong>From User Id: <a >${message.sender_id}</strong></a>
+            <p>${message.message_body}</p>
+            </div>
+            <div>
+            <button class="view-thread" id="${message.sender_id}">View Thread</button>
+            </div>
+            </div>
+          `;
 
     $conversationsContainer.append($distinctMessage);
   }
@@ -62,27 +64,36 @@ $(document).ready(function () {
     });
   }
 
-  const renderOneThread = function (message) {
-    const $distinctMessage = `<tr>
-    <th>${message.sender_id}</th>
-    <th>${message.message_body}</th>
-    <th>${message.receiver_id}</th>
-  </tr>`;
-    $threadsContainer.append($distinctMessage);
+  const renderThreadLeft = function (message) {
+    const $distinctMessageLeft = `
+    <div class="bubble-message-left">
+    From : ${message.sender_id} To: ${message.receiver_id}
+    <div class="bubble-body">
+    ${message.message_body}
+    </div>
+  </div>`;
+    $threadsContainer.append($distinctMessageLeft);
+  }
+  const renderThreadRight = function (message) {
+    const $distinctMessageRight = `
+    <div class="bubble-message-right">
+    From : ${message.sender_id} To: ${message.receiver_id}
+    <div class="bubble-body">
+    ${message.message_body}
+    </div>
+  </div>`;
+    $threadsContainer.append($distinctMessageRight);
   }
 
   const renderThreads = function (messages) {
-    const $threadHeader = `
-    <h3>Conversation with user id ${messages[0].sender_id}</h3>
-    <table>
-        <tr>
-          <th>From</th>
-        <th>Message</th>
-         <th>To</th>
-        </tr>`;
+    const $threadHeader = `<h3>Conversation with user id ${messages[0].sender_id}</h3>`;
     $threadsContainer.append($threadHeader);
     for (let message of messages) {
-      renderOneThread(message);
+      if (message.receiver_id === 3) {
+        renderThreadRight(message);
+      } else {
+        renderThreadLeft(message);
+      }
     }
     $threadsContainer.append($singleConvFooter);
     $messagerContainer.append(`<h4>Reply:
