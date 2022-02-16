@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 const $addListing = function (listing) {
   // console.log(listing.isactive);
-  $(".img-pic").on("click", (e) => {
+  $(".top-row").on("click", (e) => {
     // console.log("this is in the onclick", e.target.id);
     localStorage.setItem("singleListingId", e.target.id);
   });
