@@ -3,11 +3,10 @@ $(document).ready(function () {
   const $conversationsContainer = $('.all-conversations');
   const $threadsContainer = $('.conversations');
   const $singleConvHeader = `<h1>Messages - click to view conversations</h1>
-        <table>
-          <tr>
-            <th>From</th>
-            <th>Latest Message</th>
-          </tr>`;
+          <div class="headers">
+          <div>From User Id</div>
+          <div>Message Thread</div>
+          </div>`;
   const $singleConvFooter = `</table>`;
   const $messagerContainer = $('.messager');
   const $backToMessagesContainer = $('.back-to-messages');
@@ -15,7 +14,8 @@ $(document).ready(function () {
   const renderSingleConversation = function (message) {
     const $distinctMessage = `<tr>
             <th><a > ${message.sender_id}</a></th>
-            <th id="${message.sender_id}">${message.message_body}</th>
+            <th>${message.message_body}</th>
+            <th><button class="view-thread" id="${message.sender_id}">View Thread</button></th>
           </tr>`
 
     $conversationsContainer.append($distinctMessage);
@@ -96,7 +96,7 @@ $(document).ready(function () {
   }
 
   //when clicked this will empty page and render the clicked message thread
-  $(".all-conversations").on("click", (e) => {
+  $(document).on("click",".view-thread", (e) => {
     localStorage.setItem("singleListingId", e.target.id);
     $conversationsContainer.empty();
 
@@ -154,5 +154,4 @@ $(document).ready(function () {
   });
 
 });
-
 
