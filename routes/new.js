@@ -26,7 +26,7 @@ module.exports = (db) => {
         req.body.city,
         req.body.postcode,
         req.body.sqft,
-        5,
+        req.session.user_id,
         true,
         req.body.type,
         req.body.bedrooms,
