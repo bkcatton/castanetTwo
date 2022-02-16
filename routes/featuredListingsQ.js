@@ -23,7 +23,7 @@ module.exports = (db) => {
     )
       .then((data) => {
         console.log("added to faves?");
-        // res.redirect("/myListings");
+        res.json({ id });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
