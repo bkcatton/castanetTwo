@@ -57,13 +57,20 @@ $(document).ready(function () {
     const loadSearchResults = function () {
       const $inputCity = $(".input-city").val();
       let $inputPrice = $(".input-price").val();
+      let $minPrice = $(".input-min").val();
+      console.log($minPrice);
       if ($inputPrice < 1) {
         $inputPrice = 10000000;
+      }
+      console.log($inputPrice);
+      if (!$minPrice) {
+        $minPrice = 0;
       }
 
       $.get(`/api/listingSearch`, {
         cityName: $inputCity,
         price: $inputPrice,
+        minPrice: $minPrice,
       }).then((data) => {
         renderSearchResults(data);
       });
