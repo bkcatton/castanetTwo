@@ -9,14 +9,12 @@ $(document).ready(function () {
 
   const renderSingleConversation = function (message) {
     const $distinctMessage = `
-            <div class="thread-box">
-            <div>
-            <strong>From User Id: <a >${message.sender_id}</strong></a>
+            <div class="thread-box" id="${message.sender_id}">
+            <div class=${message.sender_id}>
+            <strong>From: <a >${message.sender_name}</strong></a>
             <p>${message.message_body}</p>
             </div>
-            <div>
-            <button class="view-thread" id="${message.sender_id}">View Thread</button>
-            </div>
+
             </div>
           `;
 
@@ -84,7 +82,7 @@ $(document).ready(function () {
   }
 
   const renderThreads = function (messages) {
-    const $threadHeader = `<h3>Conversation with user id ${messages[0].sender_id}</h3>`;
+    const $threadHeader = `<h3>Conversation with ${messages[0].sender_name}</h3>`;
     $threadsContainer.append($threadHeader);
     for (let message of messages) {
       if (message.receiver_id === 3) {
@@ -103,8 +101,9 @@ $(document).ready(function () {
   }
 
   //when clicked this will empty page and render the clicked message thread
-  $(document).on("click",".view-thread", (e) => {
+  $(document).on("click",".thread-box", (e) => {
     localStorage.setItem("singleListingId", e.target.id);
+    console.log(e.target.id);
     $conversationsContainer.empty();
 
     $.ajax({
