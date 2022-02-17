@@ -17,6 +17,7 @@ body {
   background-attachment: fixed;
 }
 
+/* Animated title */
 .title-word {
   animation: color-animation 4s linear infinite;
 }

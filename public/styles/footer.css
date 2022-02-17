@@ -1,0 +1,83 @@
+footer img {
+  width: 190px;
+  height: 60px;
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  background-color: #c4d6e5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.main-footer span {
+  margin-top: 3em;
+  font-family: din-round, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Back to Top button */
+.back-button {
+  appearance: button;
+  background-color: #1899d6;
+  border: solid transparent;
+  border-radius: 40px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  margin-right: 1em;
+}
+
+.back-button:after {
+  background-clip: padding-box;
+  background-color: #1cb0f6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.back-button:main,
+.back-button:focus {
+  user-select: auto;
+}
+
+.back-button:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.back-button:disabled {
+  cursor: auto;
+}

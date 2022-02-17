@@ -1,3 +1,4 @@
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 15px;
   height: 15px;
@@ -14,129 +15,10 @@
   width: 10px;
 }
 
-nav {
-  color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: space-between;
-  /* background-color: #8fffc7;
-  background-image: url("https://www.transparenttextures.com/patterns/retro-intro.png"); */
-
-  background-color: #c4d6e5b8;
-  /* background-image: url(https://www.transparenttextures.com/patterns/retro-intro.png); */
-  height: 3em;
-  padding-left: 6%;
-  padding-right: 8%;
-  position: sticky;
-  top: 0;
-  width: 90%;
-  height: 5%;
-  z-index: 10;
-  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
-    1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
-  align-items: center;
-}
-
-.navtext {
-  font-family: "Montserrat", sans-serif;
-  color: rgb(191, 253, 255);
-  text-shadow: none;
-  background: -webkit-linear-gradient(120deg, rgb(0, 0, 0), rgb(38, 58, 95));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
-}
-
-.navtext:hover {
-  text-shadow: 0 1px rgb(253, 253, 253);
-}
-
-nav a {
-  text-decoration: none;
-}
-
-nav img {
-  width: 200px;
-  margin-left: -2em;
-}
-
-footer img {
-  width: 190px;
-  height: 60px;
-}
-
-/* footer img:hover {
-  box-shadow: 10px 5px 5px rgb(145, 136, 136);
-} */
-
-.back-button {
-  appearance: button;
-  background-color: #1899d6;
-  border: solid transparent;
-  border-radius: 40px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: din-round, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 20px;
-  outline: none;
-  overflow: visible;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter 0.2s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  margin-right: 1em;
-}
-
-.back-button:after {
-  background-clip: padding-box;
-  background-color: #1cb0f6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
-
-.back-button:main,
-.back-button:focus {
-  user-select: auto;
-}
-
-.back-button:hover:not(:disabled) {
-  filter: brightness(1.1);
-}
-
-.back-button:disabled {
-  cursor: auto;
-}
-
 .sold-pic {
   max-width: 10em;
 }
 
-nav img:hover,
-nav h2:hover {
-  cursor: pointer;
-  color: antiquewhite;
-}
 
 body {
   background-color: rgb(243, 235, 235);
@@ -166,12 +48,6 @@ form {
   flex-wrap: wrap;
 }
 
-.bottom-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
 .sold {
   background-color: brown;
 }
@@ -188,7 +64,6 @@ input::-webkit-inner-spin-button {
 }
 
 .listing-container {
-  /* border: 2px solid rgb(143, 136, 136); */
   border-radius: 0.5em;
   margin: 3em 3em;
   width: 90vw;
@@ -196,8 +71,6 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   align-items: center;
   background-color: #bfc1c0ba;
-  /* background-image: url("https://www.transparenttextures.com/patterns/sprinkles.png");
-  opacity: 70%; */
 }
 
 .button-div {
@@ -244,14 +117,6 @@ input::-webkit-inner-spin-button {
   border-bottom: 2px solid grey;
   width: 90%;
 }
-
-/* .price {
-  padding-left: 1em;
-} */
-
-/* .city {
-  padding-left: 1em;
-} */
 
 .input-city {
   border-radius: 3px;
@@ -303,40 +168,6 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
 }
 
-.main-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  /* background-color: rgb(146, 250, 193); */
-  background-color: #c4d6e5;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  /* background-image: url("https://www.transparenttextures.com/patterns/retro-intro.png"); */
-}
-
-.main-footer span {
-  margin-top: 3em;
-  font-family: din-round, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.logged-out {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.logged-off {
-  display: inline-flex;
-}
-
-.logit {
-  color: black;
-  text-decoration: none;
-}
 
 /* DELETE BUTTON */
 .button-36 {
@@ -580,19 +411,10 @@ input::-webkit-inner-spin-button {
     transform: scale(1, 1);
   }
 }
-.date-time {
-  display: flex;
-  justify-content: center;
-  margin-top: 5em;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: 1.2em;
-}
 
 .index-div {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   width: 97%;
 }
 
