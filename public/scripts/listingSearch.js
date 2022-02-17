@@ -48,7 +48,7 @@ $(document).ready(function () {
 
       for (let listing of listings) {
         const $item = $createSearchResults(listing);
-        $(".top-row").append($item);
+        $(".top-row").prepend($item);
       }
     };
 
