@@ -229,6 +229,10 @@ input::-webkit-inner-spin-button {
   border: 3px solid #80808047;
 }
 
+.img-pic:hover {
+  box-shadow: 10px 5px 5px rgb(145, 136, 136);
+}
+
 .sold-pic {
   max-width: 15em;
 }
