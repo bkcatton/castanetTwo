@@ -310,7 +310,9 @@ input::-webkit-inner-spin-button {
   align-content: center;
   /* background-color: rgb(146, 250, 193); */
   background-color: #c4d6e5;
-  margin-top: 12em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   /* background-image: url("https://www.transparenttextures.com/patterns/retro-intro.png"); */
 }
 
