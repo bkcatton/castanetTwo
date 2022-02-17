@@ -6,6 +6,7 @@ $(document).ready(function () {
   const $singleConvFooter = `</table>`;
   const $messagerContainer = $('.messager');
   const $backToMessagesContainer = $('.back-to-messages');
+  let currentConversation;
 
   const renderSingleConversation = function (message) {
     const $distinctMessage = `
@@ -82,7 +83,10 @@ $(document).ready(function () {
   }
 
   const renderThreads = function (messages) {
-    const $threadHeader = `<h3>Conversation with ${messages[0].sender_name}</h3>`;
+    if (messages[0].sender_name) {
+      currentConversation = messages[0].sender_name;
+    }
+    const $threadHeader = `<h3>Conversation with ${currentConversation}</h3>`;
     $threadsContainer.append($threadHeader);
     for (let message of messages) {
       if (message.receiver_id === 3) {
@@ -92,6 +96,8 @@ $(document).ready(function () {
       }
     }
     $threadsContainer.append($singleConvFooter);
+
+
     $messagerContainer.append(`
     <form id="${messages[0].sender_id}">
       <textarea type="text" id="reply-body" placeholder="Your Message Here"></textarea>
