@@ -301,6 +301,7 @@ input::-webkit-inner-spin-button {
 .top-row {
   display: flex;
   flex-direction: row;
+  margin-bottom: 5em;
 }
 
 .main-footer {

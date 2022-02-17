@@ -14,23 +14,9 @@ $(document).ready(function () {
 const unFavorite = function (event) {
   const id = this.id;
 
-  console.log("button clicked unfave", id);
   $.post(`/api/favorites/${id}`).then((data) => {
     loadFavorites(data);
   });
-
-  // $.ajax({
-  //   url: `/api/favorites/${id}`,
-  //   method: "DELETE",
-  //   success: (data) => {
-  //     console.log("unfaveclick", data);
-
-  //     loadFavorites();
-  //   },
-  //   error: (error) => {
-  //     console.log("this request failed and this was the error", error);
-  //   },
-  // });
 };
 
 // loads the users favorites to the ejs
@@ -45,14 +31,11 @@ const loadFavorites = function () {
 
 const $createFavorite = function (listing) {
   localStorage.clear();
-  // console.log("listing", listing);
 
   $(".img-pic").on("click", (e) => {
-    // console.log("this is in the onclick", e.target.id);
     localStorage.setItem("singleListingId", e.target.id);
   });
-  // console.log("listing id in favs", listing.listing_id);
-  // console.log(listing);
+
   const $listingContainer = `<article class="listing-container">
   <div class="fave-div">
   <div class="fave-pic">

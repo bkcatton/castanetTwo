@@ -88,7 +88,7 @@ $(document).ready(function () {
         message: $messageBody.val(),
         buyer_number: $buyerNumber.val(),
         currentListing: $currentListing,
-        buyer_name: $buyerName.val()
+        buyer_name: $buyerName.val(),
       },
       success: (data) => {
         console.log("from our new data obj and button", data);
@@ -104,20 +104,13 @@ $(document).ready(function () {
   $(document).on("click", ".fave", addFavorite);
 });
 
+// adds a listing to the users favorites
+
 const addFavorite = function (event) {
   const id = this.id;
-  this.style.backgroundColor = "rgb(243, 243, 138)";
+  this.style.backgroundColor = "rgb(49, 207, 44)";
   this.style.color = "black";
-  this.innerHTML = "Added to favorites";
+  this.innerHTML = "Added";
 
-  $.ajax({
-    url: `/api/featuredListings/${id}`,
-    method: "POST",
-    success: (data) => {
-      console.log("faveclick", data);
-    },
-    error: (error) => {
-      console.log("this request failed and this was the error", error);
-    },
-  });
+  $.post(`/api/featuredListings/${id}`);
 };
