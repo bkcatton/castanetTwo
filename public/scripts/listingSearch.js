@@ -61,7 +61,7 @@ $(document).ready(function () {
         $inputPrice = 10000000;
       }
 
-      $.get(`http://localhost:8080/api/listingSearch`, {
+      $.get(`/api/listingSearch`, {
         cityName: $inputCity,
         price: $inputPrice,
       }).then((data) => {

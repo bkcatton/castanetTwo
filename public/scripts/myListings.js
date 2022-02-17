@@ -1,11 +1,7 @@
 // Client facing scripts here
 $(document).ready(function () {
-  // const $topRow = $(".top-row");
-  // const $form = $(".isActiveForm");
-  // $(document).on("click", ".thisone", function (e) {
-  //   console.log("this one target", event.target);
-  //   console.log("did it work");
-  // });
+  // custom delete function
+
   $.delete = function (url, data, callback, type) {
     if ($.isFunction(data)) {
       (type = type || callback), (callback = data), (data = {});
@@ -19,6 +15,8 @@ $(document).ready(function () {
     });
   };
 
+  //  creates an html structure for a listing
+
   const $addListing = function (listing) {
     localStorage.clear();
 
@@ -26,7 +24,7 @@ $(document).ready(function () {
       console.log("this is in the onclick", e.target.id);
       localStorage.setItem("singleListingId", e.target.id);
     });
-    // console.log("kjhfgkjhdfsgkjhdfsgkj", listing);
+
     const $listingContainer = `<article class="listing-container">
     <div class="mylist-div">
     <div class="mylist-pic" >
@@ -74,6 +72,8 @@ $(document).ready(function () {
     return $listingContainer;
   };
 
+  // passes each listing through addListing and appends them to the dom
+
   const renderListing = function (myListings) {
     const array = myListings.myListings;
     const container = $(".top-row");
@@ -83,6 +83,9 @@ $(document).ready(function () {
       container.prepend($item);
     }
   };
+
+  // querys the db to get listings for renderListing
+
   const loadListings = function () {
     $.get("/api/myListings")
       .then((data) => {
@@ -95,28 +98,25 @@ $(document).ready(function () {
   };
   loadListings();
 
-  $(document).on("click", "#button-form", function (event) {
-    console.log("this in here", $(this)[0]);
+  // deletes a listing from the users listings
 
+  $(document).on("click", "#button-form", function (event) {
     console.log("the target", event.target);
     event.preventDefault();
     const id = event.target.id;
-    console.log("id =", id);
 
     $.delete(`/api/myListings/${id}`).then((data) => {
-      console.log("deleted", data);
       loadListings();
     });
   });
 
+  // a user can click to mark their listing as sold
+
   $(document).on("click", "#sold-form", function (event) {
-    console.log("the target", event.target);
     event.preventDefault();
     const id = event.target.id;
-    console.log("id =", id);
 
     $.post(`/api/myListings/${id}`).then((data) => {
-      console.log(data);
       loadListings();
     });
   });
