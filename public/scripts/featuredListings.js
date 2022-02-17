@@ -81,7 +81,7 @@ const loadListings = function () {
 
 const addFavorite = function (event) {
   const id = this.id;
-  this.style.backgroundColor = "rgb(243, 243, 138)";
+  this.style.backgroundColor = "rgb(49, 207, 44)";
   this.style.color = "black";
   this.innerHTML = "Added to favorites";
 

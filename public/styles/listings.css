@@ -15,3 +15,27 @@
   border-radius: 30px;
   margin-bottom: 5%;
 }
+
+#message-body:focus {
+  outline: none;
+}
+#message-body {
+  height: 10em;
+  resize: none;
+  border: 1px;
+  border-radius: 5px;
+  width: 75%;
+}
+#buyer_number {
+  border: 1px;
+  border-radius: 5px;
+  width: 75%;
+  height: 2em;
+}
+
+#buyer_name {
+  border: 1px;
+  border-radius: 5px;
+  width: 75%;
+  height: 2em;
+}

@@ -24,15 +24,15 @@ $(document).ready(function () {
         : `<h3>Active</h3>`
     }
   <h3 class="desc">${listing.title}</h3>
-  <h3 class="city">City:${listing.city}</h3>
+  <h3 class="city">City: ${listing.city}</h3>
   <h3 class="price">Asking Price: $${listing.price}</h3>
-  <h3>Address:${listing.street_name_number}</h3>
-  <h3>Postal Code:${listing.postal_code}</h3>
+  <h3>Address: ${listing.street_name_number}</h3>
+  <h3>Postal Code: ${listing.postal_code}</h3>
   <h3>Square Footage: ${listing.sq_ft} square feet</h3>
   <h3>Property Type: ${listing.property_type}</h3>
   <h3>Number of Bedrooms: ${listing.bedroom_number}</h3>
   <h3>Number of Bathrooms: ${listing.bathroom_number}</h3>
-  <h3>Number of Parking Spaces:${listing.parking_spaces}</h3>
+  <h3>Number of Parking Spaces: ${listing.parking_spaces}</h3>
   <button class="fave" id="${listing.id}">Favorite</button>
 
   </article>`;
@@ -98,8 +98,8 @@ $(document).ready(function () {
 
 const addFavorite = function (event) {
   const id = this.id;
-  this.style.backgroundColor = 'rgb(243, 243, 138)';
-  this.style.color = 'black';
+  this.style.backgroundColor = "rgb(243, 243, 138)";
+  this.style.color = "black";
   this.innerHTML = "Added to favorites";
 
   $.ajax({
