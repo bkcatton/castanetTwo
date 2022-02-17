@@ -13,8 +13,9 @@ module.exports = (db) => {
     db.query(
       `SELECT * FROM listings
     WHERE city LIKE $1
-    AND price < $2;`,
-      [`%${req.query.cityName.slice(1)}%`, +req.query.price]
+    AND price <= $2
+    AND price >= $3;`,
+      [`%${req.query.cityName.slice(1)}%`, +req.query.price, req.query.minPrice]
     )
       .then((data) => {
         console.log("in then", data.rows);

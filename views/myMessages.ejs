@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/listings.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/messages.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- css -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/listings.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/home.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/messages.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- External Ajax, Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+      integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-  <!-- External Ajax, Jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
-    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
-    integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- public scripts -->
+    <script type="text/javascript" src="/scripts/myMessages.js"></script>
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
-  <!-- public scripts -->
-  <script type="text/javascript" src="/scripts/myMessages.js"></script>
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <title>My messages</title>
+  </head>
 
-  <title>Header</title>
-</head>
-
-<body>
-  <%- include('./partials/_header'); %>
+  <body>
+    <%- include('./partials/_header'); %>
 
     <main>
-      <div class="all-conversations">
-      </div>
-      <div class="back-to-messages">
-      </div>
-      <div class="conversations">
-      </div>
-      <div class="messager">
-      </div>
-
+      <div class="all-conversations"></div>
+      <div class="back-to-messages"></div>
+      <div class="conversations"></div>
+      <div class="messager"></div>
     </main>
 
     <%- include('./partials/_footer'); %>
-</body>
-
+  </body>
 </html>
