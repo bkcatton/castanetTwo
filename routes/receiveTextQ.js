@@ -27,6 +27,7 @@ module.exports = (db) => {
         //res.json({ data: data.rows });
         res.writeHead(200, {'Content-Type': 'text/xml'});
         console.log("did the text get added to the table?");
+
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
