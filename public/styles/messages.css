@@ -15,6 +15,12 @@ border-radius: 5px;
 width: 75%;
 margin: 10px;
 padding: 5px;
+background-color: whitesmoke;
+}
+.thread-box:hover {
+  -ms-transform: scale(1.10); /* IE 9 */
+  -webkit-transform: scale(1.10); /* Safari 3-8 */
+  transform: scale(1.10);
 }
 
 div > h4 {
@@ -22,19 +28,92 @@ div > h4 {
   justify-content: center;
 }
 .conversations{
+  border: solid 2px rgb(40, 22, 22);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  margin: 100px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  background-color: whitesmoke;
+  width: 90%;
+  position: relative;
+  left: 40px;
+  margin: 15px;
 }
-.bubble-message-right {
+.chat {
+  width: 300px;
+  border: solid 1px #EEE;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.yours {
   align-items: flex-start;
 }
-.bubble-message-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+
+.yours .message {
+  margin-right: 25%;
+  background-color: #eee;
+  position: relative;
+}
+
+.mine {
   align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+.messager {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end ;
+  margin: 20px;
+  font-size: 24px;
+  position: relative;
+  right: 2.5em;
+}
+#deliver-reply {
+  border-radius: 10px;
+}
+#reply-body {
+  width: 20em;
+  border-radius: 10px;
+}
+form:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+.back-to-messages > button {
+margin: 15px;
+font-family: 'Roboto', sans-serif;
+font-size: 24px;
+border-radius: 5px;
+}
+.back-to-messages>button:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
 }

@@ -9,14 +9,12 @@ $(document).ready(function () {
 
   const renderSingleConversation = function (message) {
     const $distinctMessage = `
-            <div class="thread-box">
-            <div>
-            <strong>From User Id: <a >${message.sender_id}</strong></a>
+            <div class="thread-box" id="${message.sender_id}">
+            <div class=${message.sender_id}>
+            <strong>From: <a >${message.sender_name}</strong></a>
             <p>${message.message_body}</p>
             </div>
-            <div>
-            <button class="view-thread" id="${message.sender_id}">View Thread</button>
-            </div>
+
             </div>
           `;
 
@@ -64,21 +62,19 @@ $(document).ready(function () {
     });
   }
 
-  const renderThreadLeft = function (message) {
+  const renderYourMessage = function (message) {
     const $distinctMessageLeft = `
-    <div class="bubble-message-left">
-    From : ${message.sender_id} To: ${message.receiver_id}
-    <div class="bubble-body">
+    <div class="yours message">
+    <div class="message">
     ${message.message_body}
     </div>
   </div>`;
     $threadsContainer.append($distinctMessageLeft);
   }
-  const renderThreadRight = function (message) {
+  const renderMyMessage = function (message) {
     const $distinctMessageRight = `
-    <div class="bubble-message-right">
-    From : ${message.sender_id} To: ${message.receiver_id}
-    <div class="bubble-body">
+    <div class="mine messages">
+    <div class="message">
     ${message.message_body}
     </div>
   </div>`;
@@ -86,29 +82,28 @@ $(document).ready(function () {
   }
 
   const renderThreads = function (messages) {
-    const $threadHeader = `<h3>Conversation with user id ${messages[0].sender_id}</h3>`;
+    const $threadHeader = `<h3>Conversation with ${messages[0].sender_name}</h3>`;
     $threadsContainer.append($threadHeader);
     for (let message of messages) {
       if (message.receiver_id === 3) {
-        renderThreadRight(message);
+        renderYourMessage(message);
       } else {
-        renderThreadLeft(message);
+        renderMyMessage(message);
       }
     }
     $threadsContainer.append($singleConvFooter);
-    $messagerContainer.append(`<h4>Reply:
-    </h4>
+    $messagerContainer.append(`
     <form id="${messages[0].sender_id}">
       <textarea type="text" id="reply-body" placeholder="Your Message Here"></textarea>
-      <button id="deliver-reply">send message</button>
-    </form>`);
+      <button id="deliver-reply">send message</button>`);
     $messagerContainer.attr('id', `${messages[0].sender_id}`);
     $backToMessagesContainer.append(`<button>Back to Messages</button>`);
   }
 
   //when clicked this will empty page and render the clicked message thread
-  $(document).on("click",".view-thread", (e) => {
+  $(document).on("click",".thread-box", (e) => {
     localStorage.setItem("singleListingId", e.target.id);
+    console.log(e.target.id);
     $conversationsContainer.empty();
 
     $.ajax({

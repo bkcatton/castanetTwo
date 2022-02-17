@@ -8,24 +8,17 @@ const http = require('http');
     const app = express();
 
 module.exports = (db) => {
-  //router.get("/", (req, res) => {
-    // db.query(
-    //   `SELECT * FROM messages;`
-    // )
-    //   .then((data) => {
-    //     res.json({ data: data.rows });
-    //   })
-    //   .catch((err) => {
-    //     res.status(500).json({ error: err.message });
-    //   });
-  //});
-
   router.post('/', (req, res) => {
     const messageBody = req.body.Body;
     const sendTo = +req.body.To.slice(1);
     const sendFrom = +req.body.From.slice(1);
     console.log("inside the post", messageBody, typeof sendTo, typeof sendFrom);
 
+    //1. add the user to the database from the single_listing form.
+    //2. get that user id and add the message to the database with that user id and the user id that
+    //owns the listing the text was sent from
+
+    //adds text message to database. passes in message body, hard codes sender and receiver id
     db.query(
       `INSERT INTO messages(id, sender_id, receiver_id, message_body)
        VALUES (nextval('messages_sequence'), 7, 3, $1) RETURNING *;`, [messageBody]
