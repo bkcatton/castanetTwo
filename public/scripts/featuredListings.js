@@ -14,9 +14,7 @@ $(document).ready(function () {
 // loops the data base and builds an html structure to be loaded to the browser
 
 const $addListing = function (listing) {
-  // console.log(listing.isactive);
   $(".top-row").on("click", (e) => {
-    // console.log("this is in the onclick", e.target.id);
     localStorage.setItem("singleListingId", e.target.id);
   });
   // console.log(listing);
@@ -48,7 +46,6 @@ const $addListing = function (listing) {
 // appends the result of add listing to the ejs
 
 const renderListing = function (listings) {
-  console.log(listings);
   const array = listings.listings;
   for (let listing of array) {
     const $item = $addListing(listing);
@@ -62,19 +59,6 @@ const loadListings = function () {
   $.get("/api/featuredListings").then((data) => {
     renderListing(data);
   });
-
-  // $.ajax({
-  //   url: "http://localhost:8080/api/featuredListings",
-  //   method: "GET",
-  //   dataType: "json",
-  //   success: (data) => {
-  //     renderListing(data);
-  //     // console.log(listings);
-  //   },
-  //   error: (error) => {
-  //     console.log("this request failed and this was the error", error);
-  //   },
-  // });
 };
 
 // adds a listing to the users favorites page
@@ -83,20 +67,7 @@ const addFavorite = function (event) {
   const id = this.id;
   this.style.backgroundColor = "rgb(49, 207, 44)";
   this.style.color = "black";
-  this.innerHTML = "Added to favorites";
+  this.innerHTML = "Added";
 
-  $.post(`/api/featuredListings/${id}`).then((data) => {
-    console.log("faveclick", data);
-  });
-
-  // $.ajax({
-  //   url: `/api/featuredListings/${id}`,
-  //   method: "POST",
-  //   success: (data) => {
-  //     console.log("faveclick", data);
-  //   },
-  //   error: (error) => {
-  //     console.log("this request failed and this was the error", error);
-  //   },
-  // });
+  $.post(`/api/featuredListings/${id}`).then((data) => {});
 };

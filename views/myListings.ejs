@@ -13,10 +13,10 @@
     />
     <!-- css -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
     <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,36 +33,16 @@
 
     <!-- App JS -->
 
-    <!-- <script type="text/javascript" src="/scripts/favorites.js"></script> -->
     <script type="text/javascript" src="/scripts/myListings.js"></script>
 
-    <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
-    <!-- <link rel="stylesheet" href="../public/styles/home.css" type="text/css" /> -->
     <title>Castanet - My Listings</title>
   </head>
 
   <body>
     <%- include('./partials/_header'); %>
-    <div class="container">
-      <!-- <h2 class="title">
-        <span class="title-word title-word-1">Search for</span>
-        <span class="title-word title-word-2">your</span>
-        <span class="title-word title-word-3">new</span>
-        <span class="title-word title-word-4">home</span>
-      </h2>
-    </div>
-    <div>
-      <form class="main-search" action="/" method="GET">
-        <input type="text" placeholder="Search by city" class="input-city" />
-        <input type="number" placeholder="Max Price" class="input-price" />
-        <button class="search" type="submit">Search</button>
-      </form>
-    </div> -->
-
     <main>
       <h1 id="myListings">My Listings</h1>
       <div class="top-row"></div>
-      <div class="bottom-row"></div>
     </main>
 
     <%- include('./partials/_footer'); %>
