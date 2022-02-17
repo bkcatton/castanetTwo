@@ -28,10 +28,27 @@ $(document).ready(function () {
     });
     // console.log("kjhfgkjhdfsgkjhdfsgkj", listing);
     const $listingContainer = `<article class="listing-container">
-
+    <div class="mylist-div">
+    <div class="mylist-pic" >
     <a name="imagelink" class="" href="/single_listing"><img class="img-pic" src='${
       listing.photo_url
     }' id='${listing.id}'/></a>
+
+    <div class='button-div mylist-btn'>
+  <form id="sold-form" method="POST">
+  <button id="${
+    listing.id
+  }" type="submit" class="button-19">  Mark Sold! </button>
+    </form>
+  <form id="button-form" method="POST">
+  <button id="${
+    listing.id
+  }" type="submit" class="button-36"> Delete Listing </button>
+  </form>
+    </div>
+
+    </div>
+    <div class="mylist-content">
     ${
       listing.isactive === "false"
         ? `<img class="sold-pic" src='https://github.com/bkcatton/castanetTwo/blob/master/public/images/Sold.png?raw=true'/>`
@@ -47,19 +64,11 @@ $(document).ready(function () {
     <h3>Number of Bedrooms: ${listing.bedroom_number}</h3>
     <h3>Number of Bathrooms: ${listing.bathroom_number}</h3>
     <h3>Number of Parking Spaces: ${listing.parking_spaces}</h3>
-
-    <div class='button-div'>
-  <form id="sold-form" method="POST">
-  <button id="${
-    listing.id
-  }" type="submit" class="button-19">  Mark Sold! </button>
-    </form>
-  <form id="button-form" method="POST">
-  <button id="${
-    listing.id
-  }" type="submit" class="button-36"> Delete Listing </button>
-  </form>
     </div>
+    </div>
+
+
+
   </article>`;
 
     return $listingContainer;

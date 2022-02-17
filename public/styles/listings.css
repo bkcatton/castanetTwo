@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   background-color: rgb(243, 235, 235);
-  border: black 1px solid;
+  /* border: black 1px solid; */
   width: 30%;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -33,9 +33,17 @@
   height: 2em;
 }
 
+#buyer_number:focus {
+  outline: none;
+}
+
 #buyer_name {
   border: 1px;
   border-radius: 5px;
   width: 75%;
   height: 2em;
+}
+
+#buyer_name:focus {
+  outline: none;
 }
