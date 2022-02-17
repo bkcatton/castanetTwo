@@ -19,7 +19,6 @@
   max-width: 10em;
 }
 
-
 body {
   background-color: rgb(243, 235, 235);
   overflow-x: hidden;
@@ -98,7 +97,7 @@ input::-webkit-inner-spin-button {
   height: 320px;
   border-radius: 0.5em;
   margin-top: 1em;
-  margin-left: 3em;
+  margin-left: 1em;
   border: 3px solid #80808047;
 }
 
@@ -168,7 +167,6 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
   margin-bottom: 5em;
 }
-
 
 /* DELETE BUTTON */
 .button-36 {
