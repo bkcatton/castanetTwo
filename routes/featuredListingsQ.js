@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM listings ORDER BY RANDOM () LIMIT 6;`)
+    db.query(`SELECT * FROM listings;`)
       .then((data) => {
         const listings = data.rows;
         res.json({ listings });
