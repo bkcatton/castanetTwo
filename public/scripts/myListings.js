@@ -119,18 +119,5 @@ $(document).ready(function () {
       console.log(data);
       loadListings();
     });
-    // $.post({
-    //   url: "/api/myListings",
-    //   method: "POST",
-    //   dataType: "json",
-    //   data: { id: event.target.id },
-    //   success: (data) => {
-    //     console.log("from our new data obj", data);
-    //     renderListing(data.listing);
-    //   },
-    //   error: (error) => {
-    //     console.log("this request failed and this was the error", error);
-    //   },
-    // });
   });
 });
