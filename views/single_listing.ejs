@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto+Slab&family=Source+Sans+Pro:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
     <!-- css -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <!-- <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
@@ -30,7 +37,10 @@
     <!-- public scripts -->
     <script type="text/javascript" src="/scripts/singleListing.js"></script>
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script src="https://kit.fontawesome.com/7684e326dd.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/7684e326dd.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- <script type="text/javascript" src="/scripts/app.js"></script> -->
     <!-- <link rel="stylesheet" href="../public/styles/home.css" type="text/css" /> -->
     <title>Header</title>
@@ -38,22 +48,7 @@
 
   <body>
     <%- include('./partials/_header'); %>
-    <div class="messager">
-      <form id="send-text">
-        <h2>Please contact seller using this form.</h2>
-        <h4>Your Name : </h4>
-        <input id="buyer_name" type="text" placeholder="John Smith">
-        <h4>Your Message :</h4>
-        <textarea
-          type="text"
-          id="message-body"
-          placeholder="Hi, I am interested in your property"
-        ></textarea>
-        <h4>Your Phone Number :</h4>
-        <input type="text" id="buyer_number" placeholder="your phone # here">
-        <button class='back-button'>submit</button>
-      </form>
-    </div>
+
     <!-- <div>
       <form action="/listings" method="post">
         <h2>Search by city</h1>
@@ -70,7 +65,22 @@
         <div>image6</div> -->
       </div>
     </main>
-
+    <div class="messager">
+      <form id="send-text">
+        <h2>Contact Seller</h2>
+        <h4>Your Name :</h4>
+        <input id="buyer_name" type="text" placeholder="Name" />
+        <h4>Your Phone Number :</h4>
+        <input type="text" id="buyer_number" placeholder="Phone number" />
+        <h4>Your Message :</h4>
+        <textarea
+          type="text"
+          id="message-body"
+          placeholder="Hi, I am interested in your property"
+        ></textarea>
+        <button class="back-button">submit</button>
+      </form>
+    </div>
     <%- include('./partials/_footer'); %>
   </body>
 </html>

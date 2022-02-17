@@ -28,10 +28,11 @@ body {
   margin-top: 5%;
   margin-bottom: 10%;
   /* width: 75%; */
-  height: 20%;
-  text-overflow: wrap;
+  /* height: 20%; */
+  /* text-overflow: wrap; */
   display: flex;
-  padding-bottom: 5%;
+  padding-bottom: 2.5%;
+  padding-top: 2.5%;
   flex-wrap: wrap;
 }
 

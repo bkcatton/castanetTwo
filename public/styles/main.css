@@ -12,6 +12,9 @@ body {
       #a3d0db 74%,
       #a3d0db 100%); */
   background-image: url("../images/jason-briscoe-UV81E0oXXWQ-unsplash.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .title-word {
@@ -89,18 +92,59 @@ body {
 }
 
 #send-text {
-  border: solid 3px black;
+  border: solid 3px rgb(160, 156, 156);
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  margin-right: 25em;
-  margin-left: 25em;
-  background-color: #d0dee9;
-  border-radius: 5em;
+  margin-right: 33%;
+  margin-left: 33%;
+  background-color: #bcc9d38a;
+  border-radius: 1em;
   padding-bottom: 2em;
   justify-content: space-around;
 }
 
 #send-text button {
   margin-top: 2em;
+}
+
+.mylist-div {
+  display: flex;
+}
+
+.mylist-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 5em;
+}
+
+.mylist-pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mylist-btn {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+}
+
+.singlelist-pic {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.single-desc {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+
+  width: 50%;
+  margin-left: 2em;
 }

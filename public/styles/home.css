@@ -4,12 +4,13 @@
 }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: #c9f7e3;
+  background-color: #f5faf8;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
   height: 60px;
-  background-color: #0a4c95;
+  background-color: #101111;
+  border-radius: 10px;
 }
 
 nav {
@@ -30,7 +31,7 @@ nav {
   z-index: 10;
   text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255),
     1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
-    align-items: center;
+  align-items: center;
 }
 
 .navtext {
@@ -47,11 +48,9 @@ nav {
   text-shadow: 0 1px rgb(253, 253, 253);
 }
 
-
 nav a {
   text-decoration: none;
 }
-
 
 nav img {
   border-radius: 10em;
@@ -133,7 +132,6 @@ footer img:hover {
 .sold-pic {
   max-width: 10em;
 }
-
 
 nav img:hover,
 nav h2:hover {
@@ -228,6 +226,7 @@ input::-webkit-inner-spin-button {
   height: 320px;
   border-radius: 0.5em;
   margin-top: 1em;
+  margin-left: 3em;
   border: 3px solid #80808047;
 }
 
@@ -308,7 +307,7 @@ input::-webkit-inner-spin-button {
   align-content: center;
   /* background-color: rgb(146, 250, 193); */
   background-color: #dad0d100;
-  background-image: url(https://www.transparenttextures.com/patterns/retro-intro.png);
+  background-image: url("https://www.transparenttextures.com/patterns/retro-intro.png");
 }
 
 .main-footer span {
@@ -588,11 +587,29 @@ input::-webkit-inner-spin-button {
 .index-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 97%;
+}
+
+.info-div {
+  margin-left: 1em;
 }
 
 .faves-header {
   text-align: center;
   font-size: 4em;
+}
+
+.featured-text {
+  text-align: center;
+  font-size: 4em;
+}
+
+.fave-div {
+  display: flex;
+  flex-direction: row;
+  width: 97%;
+}
+.fave-content {
+  margin-left: 1em;
 }
