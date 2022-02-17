@@ -604,3 +604,12 @@ input::-webkit-inner-spin-button {
   text-align: center;
   font-size: 4em;
 }
+
+.fave-div {
+  display: flex;
+  flex-direction: row;
+  width: 97%;
+}
+.fave-content {
+  margin-left: 1em;
+}

@@ -18,8 +18,10 @@ $(document).ready(function () {
     const $listingContainer = `
     <article class= "listing-container">
     <div class="mylist-div">
-    <div class="mylist-pic">
+    <div class="singlelist-pic">
     <img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/>
+    <h3 class="desc single-desc">${listing.title}</h3>
+    <button class="fave" id="${listing.id}">Favorite</button>
     </div>
     <div class="mylist-content">
     ${
@@ -38,8 +40,7 @@ $(document).ready(function () {
     <h3>Number of Parking Spaces: ${listing.parking_spaces}</h3>
     </div>
     </div>
-    <h3 class="desc">${listing.title}</h3>
-    <button class="fave" id="${listing.id}">Favorite</button>
+
 
     </article>`;
     return $listingContainer;
