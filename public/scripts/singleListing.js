@@ -21,7 +21,7 @@ $(document).ready(function () {
     <div class="singlelist-pic">
     <img class="img-pic" src='${listing.photo_url}' id='${listing.id}'/>
     <h3 class="desc single-desc">${listing.title}</h3>
-    <button class="fave" id="${listing.id}">Favorite</button>
+    <button class="fave single-fave" id="${listing.id}">Favorite</button>
     </div>
     <div class="mylist-content">
     ${
