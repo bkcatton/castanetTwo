@@ -10,6 +10,7 @@ module.exports = (db) => {
     const buyerNumber = req.query.buyer_number;
     const buyerName = req.query.buyer_name;
     const currentListing = req.query.currentListing;
+    const currentSeller = req.query.currentListing;
     console.log("from the backend query", buyerName, buyerNumber);
 
     // sendText("+12506811829", `${messageBody}`);
@@ -35,9 +36,9 @@ console.log("inside the sendTFromLQ", req.query);
       .then((data) => {
         //console.log("the users id from adding into table", data.rows[0].id);
         db.query(
-          `INSERT INTO messages (id, sender_id, receiver_id, message_body,)
+          `INSERT INTO messages (id, sender_id, receiver_id, message_body)
           VALUES (nextval('id_sequence'), $1, $2, $3) RETURNING *;`,
-          [data.rows[0].id, currentListing, messageBody]
+          [data.rows[0].id, 3, messageBody]
         )
         console.log("added to users");
       })

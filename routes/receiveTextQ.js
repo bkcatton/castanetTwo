@@ -14,7 +14,7 @@ module.exports = (db) => {
     const sendFrom = +req.body.From.slice(1);
     console.log("inside the post", messageBody, typeof sendTo, typeof sendFrom);
 
-    //1. add the user to the database from the single_listing form.
+
     //2. get that user id and add the message to the database with that user id and the user id that
     //owns the listing the text was sent from
 
