@@ -11,8 +11,8 @@ body {
       #a3dbd0 59%,
       #a3d0db 74%,
       #a3d0db 100%); */
-  background-image: url("../images/jason-briscoe-UV81E0oXXWQ-unsplash.jpeg");
-  background-size: cover;
+  background-image: url("../images/pexels-aleksandar-pasaric-325185.jpeg");
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

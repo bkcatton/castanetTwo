@@ -83,7 +83,7 @@ const addFavorite = function (event) {
   const id = this.id;
   this.style.backgroundColor = "rgb(49, 207, 44)";
   this.style.color = "black";
-  this.innerHTML = "Added to favorites";
+  this.innerHTML = "Added";
 
   $.post(`/api/featuredListings/${id}`).then((data) => {
     console.log("faveclick", data);
