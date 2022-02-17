@@ -88,6 +88,7 @@ $(document).ready(function () {
         message: $messageBody.val(),
         buyer_number: $buyerNumber.val(),
         currentListing: $currentListing,
+        buyer_name: $buyerName.val()
       },
       success: (data) => {
         console.log("from our new data obj and button", data);

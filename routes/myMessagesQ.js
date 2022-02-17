@@ -10,7 +10,9 @@ const router = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(
-      `SELECT DISTINCT ON (sender_id) sender_id, id, receiver_id, message_body FROM messages WHERE receiver_id = 3;`
+      `SELECT DISTINCT ON (sender_id) sender_id, messages.id, receiver_id, message_body, users.name AS sender_name
+      FROM messages
+      JOIN users ON sender_id = users.id WHERE receiver_id = 3;`
     )
       .then((data) => {
         res.json({ data: data.rows });
