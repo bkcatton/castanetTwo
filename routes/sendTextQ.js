@@ -36,29 +36,24 @@ module.exports = (db) => {
     //   });
 
     //from the message center:
-    const messageReceiver= req.query.receiver_id;
-
+    const messageReceiver = req.query.receiver_id;
+    //change non dependant queries into promise.all
     db.query(
       `INSERT INTO messages (id, message_body,receiver_id, sender_id)
       VALUES (nextval('id_sequence'), $1, $2, 3) RETURNING *;`,
-      [messageBody, messageReceiver]
-    )
+      [messageBody, messageReceiver])
       .then((data) => {
         console.log("added  to msgs");
         db.query(
-          `select * from messages where (sender_id = $1 AND receiver_id = 3) OR (sender_id = 3 AND receiver_id = $1);`,[messageReceiver]
-        )
+          `select * from messages where (sender_id = $1 AND receiver_id = 3) OR (sender_id = 3 AND receiver_id = $1);`, [messageReceiver])
           .then((data) => {
             res.json({ data: data.rows });
           })
-          .catch((err) => {
-            res.status(500).json({ error: err.message });
-          });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
       });
-
+//instead of clearing containiner, just append new message - will clean up queries
 
 
   });

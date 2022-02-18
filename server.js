@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
@@ -22,7 +22,7 @@ db.connect();
 app.use(morgan("dev"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cookieSession({
     name: "session",
@@ -95,6 +95,8 @@ app.use("/api/oneConversation", oneConversation(db)); //gets all messages from o
 app.use("/new", newRoutes(db));
 app.use("/", loginRoutes(db));
 app.use("/", logoutRoutes(db));
+//consolidate login/logout to use ONE app.use(auth page routes)
+//use a single end point for each app.use/get
 
 //PAGE ROUTES
 app.get("/", (req, res) => {
